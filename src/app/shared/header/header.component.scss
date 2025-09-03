@@ -1,0 +1,27 @@
+header {
+  display: flex;
+  padding: 0 96px;
+  justify-content: center;
+  position: absolute;
+  width: calc(100% - 96px*2);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
+
+    div {
+
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1440px;
+      height: 98px;
+
+      > img {
+        height: auto;
+        width: 132.14px;
+        object-fit: contain;
+
+        &:hover {
+        }
+      }
+    }
+}
