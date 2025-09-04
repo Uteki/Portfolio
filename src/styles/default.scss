@@ -6,4 +6,16 @@ body {
     text-decoration: none;
     color: inherit;
   }
+
+  button {
+    font: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+
+    &:focus {
+      outline: none;
+    }
+  }
 }

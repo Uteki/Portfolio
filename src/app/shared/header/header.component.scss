@@ -6,14 +6,65 @@ header {
   width: calc(100% - 96px*2);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
 
-    div {
-
+    > div {
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       max-width: 1440px;
       height: 98px;
+
+      > nav {
+        align-items: center;
+        display: flex;
+        gap: 24px;
+
+        > div {
+          display: flex;
+          flex-wrap: nowrap;
+          border-radius: 100px;
+          border: 2px solid #3DCFB6;
+
+          &:hover {
+            border: 2px solid #ffffff;
+          }
+
+          > button {
+            font-family: "Fira Code", monospace;
+
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 120%;
+
+
+            margin: 0;
+            color: #3DCFB680;
+            width: 44px;
+            height: 28px;
+            padding-right: 12px;
+            padding-left: 12px;
+            gap: 10px;
+            background: transparent;
+            border-radius: 100px;
+
+
+            &:focus-visible {
+              outline: 2px solid #3DCFB6;
+            }
+          }
+        }
+
+        a {
+          color: white;
+          font-size: 20px;
+          font-weight: 100;
+          line-height: 100%;
+          white-space: nowrap;
+          font-family: "Fira Code", monospace;
+          letter-spacing: -0.03em;
+
+        }
+      }
 
       > img {
         height: auto;
@@ -24,4 +75,13 @@ header {
         }
       }
     }
+}
+
+.active-lang {
+  outline: none;
+  border-radius: 100px;
+  box-shadow: 0 0 0 2px #3DCFB6;
+  background: #3DCFB6 !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
 }
