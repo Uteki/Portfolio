@@ -1,8 +1,10 @@
+@use "../../../styles/colors" as *;
+
 header {
   display: flex;
   padding: 0 96px;
-  justify-content: center;
   position: absolute;
+  justify-content: center;
   width: calc(100% - 96px*2);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
 
@@ -23,33 +25,36 @@ header {
           display: flex;
           flex-wrap: nowrap;
           border-radius: 100px;
-          border: 2px solid #3DCFB6;
+          border: 2px solid $green-hundred;
 
           &:hover {
+            transition: all 0.5s ease;
             border: 2px solid #ffffff;
+
+            > button {
+              transition: all 0.5s ease;
+              color: $green-hundred;
+              font-weight: 700;
+            }
           }
 
           > button {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 120%;
             font-family: "Fira Code", monospace;
 
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 120%;
-
-
             margin: 0;
-            color: #3DCFB680;
             width: 44px;
             height: 28px;
-            padding-right: 12px;
+            color: $green-fifty;
             padding-left: 12px;
-            gap: 10px;
-            background: transparent;
+            padding-right: 12px;
             border-radius: 100px;
-
+            background: transparent;
 
             &:focus-visible {
-              outline: 2px solid #3DCFB6;
+              outline: 2px solid $green-hundred;
             }
           }
         }
@@ -59,10 +64,24 @@ header {
           font-size: 20px;
           font-weight: 100;
           line-height: 100%;
+          position: relative;
           white-space: nowrap;
-          font-family: "Fira Code", monospace;
           letter-spacing: -0.03em;
+          font-family: "Fira Code", monospace;
 
+          &:hover {
+            &:after {
+              top: 100%;
+              left: 50%;
+              width: 6px;
+              height: 6px;
+              content: "";
+              border-radius: 50%;
+              position: absolute;
+              background: $primary-green;
+              transform: translate(-50%, 4px);
+            }
+          }
         }
       }
 
@@ -80,8 +99,8 @@ header {
 .active-lang {
   outline: none;
   border-radius: 100px;
-  box-shadow: 0 0 0 2px #3DCFB6;
-  background: #3DCFB6 !important;
+  box-shadow: 0 0 0 2px $green-hundred;
+  background: $green-hundred !important;
   font-weight: 700 !important;
-  color: #ffffff !important;
+  color: white !important;
 }
