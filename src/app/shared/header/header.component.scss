@@ -1,20 +1,18 @@
 @use "../../../styles/colors" as *;
 
 header {
+  width: 100%;
   display: flex;
-  padding: 0 96px;
   position: absolute;
   justify-content: center;
-  width: calc(100% - 96px*2);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
 
     > div {
       width: 100%;
+      height: 98px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: 1440px;
-      height: 98px;
 
       > nav {
         align-items: center;
@@ -39,19 +37,18 @@ header {
           }
 
           > button {
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 120%;
-            font-family: "Fira Code", monospace;
-
             margin: 0;
             width: 44px;
             height: 28px;
-            color: $green-fifty;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 120%;
             padding-left: 12px;
             padding-right: 12px;
+            color: $green-fifty;
             border-radius: 100px;
             background: transparent;
+            font-family: "Fira Code", monospace;
 
             &:focus-visible {
               outline: 2px solid $green-hundred;
@@ -73,8 +70,8 @@ header {
             &:after {
               top: 100%;
               left: 50%;
-              width: 6px;
-              height: 6px;
+              width: 8px;
+              height: 8px;
               content: "";
               border-radius: 50%;
               position: absolute;
@@ -90,8 +87,7 @@ header {
         width: 132.14px;
         object-fit: contain;
 
-        &:hover {
-        }
+        &:hover {}
       }
     }
 }

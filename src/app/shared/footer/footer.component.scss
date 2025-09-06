@@ -1,14 +1,97 @@
+@use "../../../styles/colors" as *;
+
 footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
   > div {
+    width: 100%;
     height: 126px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 66px;
+    justify-content: space-between;
+
+    > p {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 120%;
+      color: $green-hundred;
+      font-family: "Fira Code", monospace;
+    }
 
     > div {
+      align-self: flex-end;
+
       > img {
         height: auto;
         width: 132.14px;
         object-fit: contain;
 
-        &:hover {
+        &:hover {}
+      }
+
+      > p {
+        margin: 24px 0 0 0;
+      }
+
+      > address {
+        margin-top: 8px;
+        font-style: normal;
+      }
+    }
+
+    > nav {
+      align-self: flex-end;
+
+      > ul {
+        margin: 0;
+        padding: 0;
+
+        > li {
+          margin-top: 8px;
+
+          &:first-child {
+           margin-top: 0;
+          }
+          &::marker {
+            content: "";
+            color: transparent;
+          }
+
+          > a {
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 120%;
+            position: relative;
+            font-family: "Karla", sans-serif;
+
+            &::before {
+              top: 50%;
+              width: 8px;
+              opacity: 0;
+              height: 8px;
+              content: "";
+              left: -14px;
+              border-radius: 50%;
+              position: absolute;
+              transform: translateY(-50%);
+              background: $green-hundred;
+              transition: opacity 0.5s ease;
+            }
+
+            &:hover {
+              transition: all 0.5s ease;
+              color: $green-hundred;
+
+              &::before {
+                opacity: 1;
+              }
+            }
+          }
         }
       }
     }

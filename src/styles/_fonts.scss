@@ -5,3 +5,15 @@
   font-weight: 400;
   src: url('../assets/fonts/fira-code-v26-latin-regular.woff2') format('woff2');
 }
+
+@font-face {
+  font-display: fallback;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/karla-v32-latin-regular.woff2') format('woff2');
+}
+
+p, address, li {
+  font-family: 'Karla', sans-serif;
+}
