@@ -14,6 +14,10 @@
   src: url('../assets/fonts/karla-v32-latin-regular.woff2') format('woff2');
 }
 
-p, address, li {
+p, address, li, h1, a {
   font-family: 'Karla', sans-serif;
+}
+
+h2 {
+  font-family: "Fira Code", monospace;
 }

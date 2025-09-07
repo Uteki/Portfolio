@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
+import {AnimationService} from "../../animation.service";
 
 @Component({
   selector: 'app-above-the-fold',
@@ -9,4 +10,23 @@ import { Component } from '@angular/core';
 })
 export class AboveTheFoldComponent {
 
+   constructor(private animationService: AnimationService) {}
+
+  //TODO: Firefly
+  @HostListener('document:mousemove', ['$event'])
+
+  onMouseMove(event: MouseEvent) {
+    document.body.style.setProperty('--x', `${event.clientX}px`);
+    document.body.style.setProperty('--y', `${event.clientY}px`);
+  }
+
+  onHover(event: Event) {
+    const target = event.currentTarget as HTMLElement;
+    this.animationService.startMarqueeBtnAnimation(target);
+  }
+
+  onHoverOut(event: Event) {
+    const target = event.currentTarget as HTMLElement;
+    this.animationService.returnMarqueeBtnToCenter(target);
+  }
 }

@@ -1,5 +1,87 @@
-section {
-  height: 100dvh;
+@use "../../../styles/colors" as *;
 
+section {
+  display: flex;
+  height: 100dvh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+
+  > div {
+    text-align: center;
+
+    > h1 {
+      color: #D9D9D9;
+      font-size: 128px;
+      font-weight: 700;
+      line-height: 100%;
+      margin: 12px 0 0 0;
+      letter-spacing: -2%;
+    }
+
+    > h2 {
+      margin: 0;
+      color: #D9D9D9;
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 100%;
+    }
+
+    > div {
+      gap: 48px;
+      display: flex;
+      margin-top: 40px;
+      justify-content: center;
+
+      a {
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #FFFFFF;
+        border-radius: 100px;
+        line-height: 120%;
+        font-weight: 400;
+        font-size: 18px;
+        height: 48px;
+        width: 172px;
+        opacity: 1;
+
+        > span {
+          transition: transform 0.4s ease;
+          position: relative;
+        }
+
+        &:hover {
+          transition: all 1s ease-out;
+          border: 1px solid $green-hundred;
+
+          > span {
+            transition: all 1s ease-out;
+            color: $green-hundred;
+          }
+        }
+      }
+    }
+  }
+}
+
+//TODO - Mouse follower firefly
+sections::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(
+      circle 150px at var(--x, 50%) var(--y, 50%),
+      rgba(61, 207, 182, 0.3),
+      transparent 80%
+  );
+  transition: background 0.1s linear;
+  z-index: 1;
 }

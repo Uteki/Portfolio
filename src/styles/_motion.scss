@@ -1,0 +1,14 @@
+@keyframes centerToLeft {
+  0%   { left: 0; }
+  100% { left: -100%; }
+}
+
+@keyframes rightToLeft {
+  0%   { left: 100%; }
+  100% { left: -100%; }
+}
+
+@keyframes returnToCenter {
+  0%   { left: -100%; }
+  100% { left: 0; }
+}
