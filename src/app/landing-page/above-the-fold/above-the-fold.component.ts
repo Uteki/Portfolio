@@ -1,10 +1,13 @@
 import {Component, HostListener} from '@angular/core';
 import {AnimationService} from "../../animation.service";
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-above-the-fold',
   standalone: true,
-  imports: [],
+  imports: [
+    NgOptimizedImage
+  ],
   templateUrl: './above-the-fold.component.html',
   styleUrl: './above-the-fold.component.scss'
 })
