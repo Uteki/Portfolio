@@ -193,20 +193,20 @@ sections::before {
 .marquee {
   inset: 0 0 0 0;
   position: absolute;
-  overflow-x: hidden;
+  overflow: hidden;
   pointer-events: none;
 
   > div {
-    margin-top: 0 !important;
-    background: #FFFFFF1F;
-    height: 60px;
-    width: 100%;
     left: -5px;
-    bottom: 5%;
+    bottom: 6%;
+    width: 100%;
+    height: 60px;
     padding: 0 20px;
     overflow: hidden;
     position: absolute;
+    background: #FFFFFF1F;
     transform: rotate(-3deg);
+    margin-top: 0 !important;
     backdrop-filter: blur(3px);
 
     > div {
