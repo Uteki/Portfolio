@@ -1,17 +1,24 @@
 import {Component, HostListener} from '@angular/core';
 import {AnimationService} from "../../animation.service";
-import {NgOptimizedImage} from "@angular/common";
+import {NgForOf, NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-above-the-fold',
   standalone: true,
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    NgForOf
   ],
   templateUrl: './above-the-fold.component.html',
   styleUrl: './above-the-fold.component.scss'
 })
 export class AboveTheFoldComponent {
+  items: string[] = [
+    'Available for remote work',
+    'Frontend Developer',
+    'Based in Munich',
+    'Open to work'
+  ];
 
    constructor(private animationService: AnimationService) {}
 

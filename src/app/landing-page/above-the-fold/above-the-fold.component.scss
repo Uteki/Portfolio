@@ -1,5 +1,8 @@
 @use "../../../styles/colors" as *;
 
+$items: 8;
+$duration: 30s;
+
 section {
   display: flex;
   height: 100dvh;
@@ -99,7 +102,7 @@ section {
         border: 1px solid $green-hundred;
 
         > img {
-          //TODO: animation
+          animation: arrowJiggle 0.5s infinite alternate;
         }
       }
     }
@@ -123,14 +126,45 @@ section {
       display: flex;
       pointer-events: auto;
       flex-direction: column;
+
       > a {
         display: inline flex;
 
         &:first-child {
           transform: rotate(90deg) translateX(-60%);
+
+          &:hover {
+            color: #3DCFB6;
+          }
         }
+
         &:nth-child(2) {
           margin-bottom: 12px;
+        }
+
+        &:nth-child(2), &:nth-child(3) {
+          &:hover {
+            > svg > * {
+              fill: white ;
+            }
+
+            &::before {
+              opacity: 1;
+            }
+          }
+
+          &::before {
+            opacity: 0;
+            width: 8px;
+            height: 8px;
+            content: "";
+            right: -30px;
+            border-radius: 50%;
+            position: absolute;
+            background: $green-hundred;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease;
+          }
         }
       }
     }
@@ -154,4 +188,64 @@ sections::before {
   );
   transition: background 0.1s linear;
   z-index: 1;
+}
+
+.marquee {
+  inset: 0 0 0 0;
+  position: absolute;
+  overflow-x: hidden;
+  pointer-events: none;
+
+  > div {
+    margin-top: 0 !important;
+    background: #FFFFFF1F;
+    height: 60px;
+    width: 100%;
+    left: -5px;
+    bottom: 5%;
+    padding: 0 20px;
+    overflow: hidden;
+    position: absolute;
+    transform: rotate(-3deg);
+    backdrop-filter: blur(3px);
+
+    > div {
+        width: 99%;
+        left: -15px;
+        height: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        position: relative;
+        margin-inline: auto;
+
+      > p {
+        color: #3DCFB6;
+        flex-shrink: 0;
+        font-family: "Karla", sans-serif;
+        font-size: 32px;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 400;
+        line-height: 120%;
+        margin: 0;
+
+        position: absolute;
+        width: 500px;
+        height: 100%;
+        left: max(calc(500px  * 8), 100%);
+        animation-name: scrollLeft;
+        animation-duration: 30s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+    }
+  }
+}
+
+@for $i from 1 through $items {
+  .item#{$i} {
+    animation-delay: calc(#{$duration} / #{$items} * (#{$items} - #{$i}) * -1);
+  }
 }
