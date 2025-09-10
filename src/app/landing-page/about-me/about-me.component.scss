@@ -1,0 +1,72 @@
+@use "../../../styles/colors" as *;
+
+section {
+  > div {
+    margin-top: 50px;
+
+    > div {
+      height: 708px;
+      display: flex;
+      justify-content: space-between;
+
+      > figure {
+        align-self: flex-start;
+        width: 568px;
+        height: 568px;
+
+        > img {
+          width: 100%;
+          max-width: 568px;
+          height: auto;
+          border-radius: 30px;
+        }
+      }
+
+      > div {
+        align-self: flex-end;
+
+        > h3 {
+          color: $green-hundred;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 100%;
+        }
+
+        > div {
+          width: 568px;
+          height: 540px;
+          background: #3DCFB61A;
+          border: 1px solid $green-hundred;
+          backdrop-filter: blur(4px);
+          gap: 40px;
+          border-radius: 30px;
+          padding: 32px;
+
+          > h2 {
+            margin: 0;
+            color: $green-hundred;
+            font-weight: 700;
+            font-size: 64px;
+            line-height: 100%;
+            letter-spacing: -3%;
+          }
+
+          > p {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 120%;
+            text-align: justify;
+          }
+
+          .highlight {
+            color: #FFFFFFCC;
+
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

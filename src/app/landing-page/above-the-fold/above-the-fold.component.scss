@@ -85,7 +85,7 @@ section {
     pointer-events: none;
     flex-direction: column;
     justify-content: flex-start;
-    border-left: 1.5px solid #3DCFB6;
+    border-left: 1.5px solid $green-hundred;
 
     &:nth-child(1) {
       transform: translateX(15px);
@@ -134,7 +134,7 @@ section {
           transform: rotate(90deg) translateX(-60%);
 
           &:hover {
-            color: #3DCFB6;
+            color: $green-hundred;
           }
         }
 
@@ -219,26 +219,26 @@ sections::before {
         margin-inline: auto;
 
       > p {
-        color: #3DCFB6;
-        flex-shrink: 0;
-        font-family: "Karla", sans-serif;
-        font-size: 32px;
-        white-space: nowrap;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-weight: 400;
-        line-height: 120%;
         margin: 0;
-
-        position: absolute;
         width: 500px;
         height: 100%;
+        display: flex;
+        flex-shrink: 0;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 120%;
+        position: absolute;
+        white-space: nowrap;
+        align-items: center;
+        color: $green-hundred;
+        justify-content: space-between;
+        font-family: "Karla", sans-serif;
+
         left: max(calc(500px  * 8), 100%);
         animation-name: scrollLeft;
         animation-duration: 30s;
-        animation-iteration-count: infinite;
         animation-timing-function: linear;
+        animation-iteration-count: infinite;
       }
     }
   }
