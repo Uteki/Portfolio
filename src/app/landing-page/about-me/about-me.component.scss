@@ -91,8 +91,8 @@ section {
 
           .highlight {
             display: flex;
-            align-items: flex-start;
             color: #FFFFFFCC;
+            align-items: flex-start;
 
             > span {
               margin-right: 15px;
@@ -115,8 +115,9 @@ section {
   }
 }
 
+//TODO - bonus stuff
 figure figcaption {
-  background: #0d1a1a; /* dark background matching theme */
+  background: #0d1a1a;
   border: 1px solid #00e0c6;
   border-radius: 8px;
   padding: 1rem 1.5rem;
@@ -132,7 +133,7 @@ figure figcaption::before,
 figure figcaption::after {
   content: '"';
   position: absolute;
-  font-size: 1.5rem; /* smaller & balanced */
+  font-size: 1.5rem;
   color: #00e0c6;
   opacity: 0.7;
   font-weight: bold;
@@ -147,4 +148,3 @@ figure figcaption::after {
   bottom: 0.5rem;
   right: 0.75rem;
 }
-
