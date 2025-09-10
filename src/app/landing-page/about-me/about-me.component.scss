@@ -2,7 +2,7 @@
 
 section {
   > div {
-    margin-top: 50px;
+    margin-top: 100px;
 
     > div {
       height: 708px;
@@ -10,19 +10,48 @@ section {
       justify-content: space-between;
 
       > figure {
+        flex: 50%;
+        margin: 0 20px 0 0;
+        position: relative;
         align-self: flex-start;
-        width: 568px;
-        height: 568px;
+        max-width: 568px;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 30px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          transform: translate(-30px, 30px);
+          border-radius: 30px;
+          background: repeating-linear-gradient(
+              45deg,
+              rgba(0, 224, 198, 0.4),
+              rgba(0, 224, 198, 0.4) 2px,
+              transparent 2px,
+              transparent 22px
+          );
+          pointer-events: none;
+        }
 
         > img {
           width: 100%;
-          max-width: 568px;
-          height: auto;
+          height: 100%;
+          object-fit: cover;
           border-radius: 30px;
+          display: block;
         }
       }
 
       > div {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+
+        flex: 50%;
+        margin: 0 0 0 20px;
         align-self: flex-end;
 
         > h3 {
@@ -33,14 +62,16 @@ section {
         }
 
         > div {
-          width: 568px;
-          height: 540px;
+          max-width: 568px;
+          max-height: 540px;
           background: #3DCFB61A;
           border: 1px solid $green-hundred;
           backdrop-filter: blur(4px);
           gap: 40px;
           border-radius: 30px;
           padding: 32px;
+
+          overflow-y: hidden;
 
           > h2 {
             margin: 0;
@@ -59,7 +90,20 @@ section {
           }
 
           .highlight {
+            display: flex;
+            align-items: flex-start;
             color: #FFFFFFCC;
+
+            > span {
+              margin-right: 15px;
+
+              > img {
+                margin-top: 3px;
+                transform:translateX(-15px);
+                width: 32px;
+                height: 32px;
+              }
+            }
 
             &:hover {
               color: white;
@@ -70,3 +114,37 @@ section {
     }
   }
 }
+
+figure figcaption {
+  background: #0d1a1a; /* dark background matching theme */
+  border: 1px solid #00e0c6;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ddd;
+  position: relative;
+}
+
+figure figcaption::before,
+figure figcaption::after {
+  content: '"';
+  position: absolute;
+  font-size: 1.5rem; /* smaller & balanced */
+  color: #00e0c6;
+  opacity: 0.7;
+  font-weight: bold;
+}
+
+figure figcaption::before {
+  top: 0.5rem;
+  left: 0.75rem;
+}
+
+figure figcaption::after {
+  bottom: 0.5rem;
+  right: 0.75rem;
+}
+
