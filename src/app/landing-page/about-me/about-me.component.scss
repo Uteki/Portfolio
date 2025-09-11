@@ -11,21 +11,23 @@ section {
 
       > figure {
         flex: 50%;
-        margin: 0 20px 0 0;
-        position: relative;
-        align-self: flex-start;
-        max-width: 568px;
         width: 100%;
+        max-width: 568px;
+        position: relative;
+        margin: 0 25px 0 0;
         aspect-ratio: 1 / 1;
         border-radius: 30px;
+        align-self: flex-start;
 
         &::before {
+          inset: 0;
+          opacity: 0;
+          z-index: -1;
           content: "";
           position: absolute;
-          inset: 0;
-          z-index: -1;
-          transform: translate(-30px, 30px);
           border-radius: 30px;
+          pointer-events: none;
+          transform: translate(0, 0);
           background: repeating-linear-gradient(
               45deg,
               rgba(0, 224, 198, 0.4),
@@ -33,7 +35,12 @@ section {
               transparent 2px,
               transparent 22px
           );
-          pointer-events: none;
+          transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        &.hovered::before {
+          transform: translate(-30px, 30px);
+          opacity: 1;
         }
 
         > img {
@@ -41,72 +48,73 @@ section {
           height: 100%;
           object-fit: cover;
           border-radius: 30px;
-          display: block;
         }
       }
 
-      > div {
+      > article {
+        flex: 50%;
         display: flex;
+        margin: 0 0 0 25px;
+        align-self: flex-end;
         align-items: flex-end;
         flex-direction: column;
 
-        flex: 50%;
-        margin: 0 0 0 20px;
-        align-self: flex-end;
-
-        > h3 {
-          color: $green-hundred;
-          font-weight: 500;
-          font-size: 24px;
-          line-height: 100%;
-        }
-
         > div {
-          max-width: 568px;
-          max-height: 540px;
-          background: #3DCFB61A;
-          border: 1px solid $green-hundred;
-          backdrop-filter: blur(4px);
-          gap: 40px;
-          border-radius: 30px;
-          padding: 32px;
-
-          overflow-y: hidden;
-
-          > h2 {
-            margin: 0;
+          > h3 {
             color: $green-hundred;
-            font-weight: 700;
-            font-size: 64px;
             line-height: 100%;
-            letter-spacing: -3%;
+            font-weight: 500;
+            font-size: 24px;
           }
 
-          > p {
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 120%;
-            text-align: justify;
-          }
+          > div {
+            gap: 40px;
+            padding: 32px;
+            max-width: 568px;
+            max-height: 540px;
+            border-radius: 30px;
+            background: #3DCFB61A;
+            border: 1px solid $green-hundred;
+            backdrop-filter: blur(4px);
 
-          .highlight {
-            display: flex;
-            color: #FFFFFFCC;
-            align-items: flex-start;
+            //TODO - Remove when responsive styling
+            overflow-y: hidden;
 
-            > span {
-              margin-right: 15px;
-
-              > img {
-                margin-top: 3px;
-                transform:translateX(-15px);
-                width: 32px;
-                height: 32px;
-              }
+            > h2 {
+              margin: 0;
+              font-size: 64px;
+              font-weight: 700;
+              line-height: 100%;
+              letter-spacing: -3%;
+              color: $green-hundred;
             }
 
-            &:hover {
-              color: white;
+            > p {
+              font-size: 18px;
+              font-weight: 400;
+              line-height: 120%;
+              text-align: justify;
+            }
+
+            .highlight {
+              display: flex;
+              color: #FFFFFFCC;
+              align-items: flex-start;
+
+              > span {
+                margin-right: 15px;
+
+                > img {
+                  transform:translateX(-15px);
+                  margin-top: 3px;
+                  height: 32px;
+                  width: 32px;
+                }
+              }
+
+              &:hover {
+                color: white;
+              }
             }
           }
         }

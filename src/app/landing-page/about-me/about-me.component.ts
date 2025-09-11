@@ -11,5 +11,9 @@ import {NgOptimizedImage} from "@angular/common";
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent {
+  hovered = false;
 
+  onHover() {
+    this.hovered = true;
+  }
 }
