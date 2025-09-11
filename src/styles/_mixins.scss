@@ -1,0 +1,31 @@
+@use "colors" as *;
+
+@mixin pill-button {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #FFFFFF;
+  border-radius: 100px;
+  line-height: 120%;
+  font-weight: 400;
+  font-size: 18px;
+  height: 48px;
+  width: 172px;
+  opacity: 1;
+
+  > span {
+    transition: transform 0.4s ease;
+    position: relative;
+  }
+
+  &:hover {
+    transition: all 1s ease-out;
+    border: 1px solid $green-hundred;
+
+    > span {
+      transition: all 1s ease-out;
+      color: $green-hundred;
+    }
+  }
+}
