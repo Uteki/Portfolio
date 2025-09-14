@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AnimationService} from "../../animation.service";
 
 @Component({
   selector: 'app-skill-set',
@@ -8,5 +9,15 @@ import { Component } from '@angular/core';
   styleUrl: './skill-set.component.scss'
 })
 export class SkillSetComponent {
+  constructor(private animationService: AnimationService) {}
 
+  onHover(event: Event) {
+    const target = event.currentTarget as HTMLElement;
+    this.animationService.startMarqueeBtnAnimation(target);
+  }
+
+  onHoverOut(event: Event) {
+    const target = event.currentTarget as HTMLElement;
+    this.animationService.returnMarqueeBtnToCenter(target);
+  }
 }

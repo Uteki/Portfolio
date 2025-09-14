@@ -1,0 +1,184 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/mixins" as *;
+
+section {
+  //width: 100%;
+  background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
+
+  > div {
+  min-height: 695px;
+  margin-top: 100px;
+
+    > div {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      //flex-wrap: wrap;
+
+      > article {
+        margin: 0 25px 0 0;
+        flex: 1 1 50%;
+        min-width: 300px;
+
+        > div {
+          > h3 {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 100%;
+            color: #3DCFB6;
+          }
+
+          > div {
+            background: #3DCFB61A;
+            border: 1px solid #3DCFB6;
+            max-width: 520px;
+            max-height: 503px;
+            opacity: 1;
+            gap: 40px;
+            border-radius: 30px;
+            padding: 32px;
+
+            > p {
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 120%;
+              text-align: justify;
+            }
+
+            > h2 {
+              font-weight: 700;
+              font-size: 64px;
+              line-height: 100%;
+              letter-spacing: -3%;
+              color: #3DCFB6;
+              margin: 0;
+            }
+
+            > div {
+              width: 70%;
+
+              > h4 {
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 120%;
+
+                > span {
+                  font-family: "Fira Code", monospace;
+                  color: #3DCFB6;
+                }
+              }
+            }
+
+            > a {
+              margin-top: 50px;
+              @include pill-button;
+            }
+          }
+        }
+      }
+
+      > div {
+        margin: 0 0 0 25px;
+
+        flex: 1 1 50%;
+        min-width: 300px;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 2rem;
+        text-align: center;
+
+        align-items: flex-start;
+        width: 100%;
+        max-width: 632px;
+
+        > div {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+
+          > figure {
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 0;
+
+            > img {
+              margin-bottom: 5px;
+              width: 100%;
+              max-height: 50px;
+              height: auto;
+            }
+
+            &:hover {
+              > img {
+                  transform: scale(1.05);
+              }
+            }
+          }
+
+          &:nth-last-child(-n+4) {
+            margin: 0;
+          }
+
+          &:nth-last-child(2) {
+            figure:hover {
+              color: #3DCFB6;
+              transition: opacity 0.5s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//TODO
+.tooltip {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tooltip-content {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: #3DCFB6;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  text-align: center;
+  z-index: 10;
+  white-space: nowrap;
+
+  > div {
+    display: flex;
+    justify-content: center;
+    > figure {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    > figure:nth-child(2) {
+      margin: 0 10px;
+    }
+  }
+}
+
+.tooltip:hover .tooltip-content {
+  opacity: 1;
+}
+
