@@ -161,6 +161,21 @@ section {
   z-index: 10;
   white-space: nowrap;
 
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -6px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid white;
+    pointer-events: none;
+    aria-hidden: true;
+  }
+
   > div {
     display: flex;
     justify-content: center;
