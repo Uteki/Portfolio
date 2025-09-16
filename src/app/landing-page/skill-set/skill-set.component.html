@@ -7,11 +7,19 @@
 
           <div>
             <h2>Skill Set</h2>
-            <p>I’ve worked with a wide range of front-end and back-end technologies, including Angular, TypeScript, Firebase, Docker, Java, PHP, and SQL. I adapt quickly to new technologies, continuously refine my skills and workflow, and treat every project as an opportunity to learn, grow, and stay ahead in the fast-moving world of web development, delivering efficient, scalable, and engaging solutions.</p>
+            <p>
+              I’ve worked with a wide range of front-end and back-end technologies, including Angular,
+              TypeScript, Firebase, Docker, Java, PHP, and SQL. I adapt quickly to new technologies,
+              continuously refine my skills and workflow, and treat every project as an opportunity to
+              learn, grow, and stay ahead in the fast-moving world of web development, delivering
+              efficient, scalable, and engaging solutions.
+            </p>
 
             <div>
               <h4>You need <span>another skill?</span></h4>
-              <p>Feel free to contact me. I look forward to expanding on my previous knowledge.</p>
+              <p>
+                Feel free to contact me. I look forward to expanding on my previous knowledge.
+              </p>
             </div>
 
             <a
@@ -19,7 +27,8 @@
               (mouseleave)="onHoverOut($event)"
               (touchstart)="onHover($event)"
               (touchend)="onHoverOut($event)"
-              href="#">
+              href="#"
+            >
               <span>Let's Talk</span>
             </a>
           </div>
@@ -27,140 +36,27 @@
       </article>
 
       <div>
-        <div>
+        <div *ngFor="let skill of skills">
           <figure>
-            <img src="assets/img/icons/skills/html.svg" alt="HTML">
-            <figcaption>HTML</figcaption>
+            <img [src]="skill.icon" [alt]="skill.name">
+            <figcaption [innerHTML]="skill.name"></figcaption>
           </figure>
         </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/css.svg" alt="CSS">
-            <figcaption>CSS</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/javascript.svg" alt="JavaScript">
-            <figcaption>JavaScript</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/md.svg" alt="Material Design">
-            <figcaption>Material <br>Design</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/typescript.svg" alt="TypeScript">
-            <figcaption>TypeScript</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/angular.svg" alt="Angular">
-            <figcaption>Angular</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/firebase.svg" alt="Firebase">
-            <figcaption>Firebase</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/git.svg" alt="Git">
-            <figcaption>Git</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/api.svg" alt="REST-API">
-            <figcaption>REST-API</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/scrum.svg" alt="Scrum">
-            <figcaption>Scrum</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/bootstrap.svg" alt="Bootstrap">
-            <figcaption>Bootstrap</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/java.svg" alt="JAVA">
-            <figcaption>JAVA</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/php.svg" alt="PHP">
-            <figcaption>PHP</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/twig.svg" alt="Twig">
-            <figcaption>Twig</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/sql.svg" alt="SQL">
-            <figcaption>SQL</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/docker.svg" alt="Docker">
-            <figcaption>Docker</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/drupal.svg" alt="Drupal">
-            <figcaption>Drupal</figcaption>
-          </figure>
-        </div>
-        <div>
-          <figure>
-            <img src="assets/img/icons/skills/wordpress.svg" alt="Wordpress">
-            <figcaption>Wordpress</figcaption>
-          </figure>
-        </div>
+
         <div>
           <figure class="tooltip">
-            <img src="assets/img/icons/skills/growth.svg" alt="Growth Icon">
-            <figcaption>Growth <br>mindset</figcaption>
+            <img [src]="growth.icon" [alt]="growth.name">
+            <figcaption [innerHTML]="growth.name"></figcaption>
 
             <div class="tooltip-content">
-              <p>I have a special interest in learning</p>
+              <p>I have a special interest in learning !</p>
               <div>
-                <figure>
-                  <img src="assets/img/icons/skills/react.svg" alt="React" width="30">
-                  <figcaption>React</figcaption>
-                </figure>
-                <figure>
-                  <img src="assets/img/icons/skills/vue.svg" alt="Vue" width="30">
-                  <figcaption>Vue</figcaption>
-                </figure>
-                <figure>
-                  <img src="assets/img/icons/skills/python.svg" alt="Python" width="30">
-                  <figcaption>Python</figcaption>
+                <figure *ngFor="let learn of growth.learning">
+                  <img [src]="learn.icon" [alt]="learn.name" width="30">
+                  <figcaption>{{ learn.name }}</figcaption>
                 </figure>
               </div>
             </div>
-          </figure>
-        </div>
-        <div>
-          <figure>
           </figure>
         </div>
       </div>

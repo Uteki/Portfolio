@@ -73,9 +73,9 @@ section {
             max-width: 568px;
             max-height: 540px;
             border-radius: 30px;
-            background: #3DCFB61A;
-            border: 1px solid $green-hundred;
+            background: $box-dark;
             backdrop-filter: blur(4px);
+            border: 1px solid $green-hundred;
 
             //TODO - Remove when responsive styling
             overflow-y: hidden;
