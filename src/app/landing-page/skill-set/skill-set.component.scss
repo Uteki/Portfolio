@@ -144,7 +144,6 @@ section {
     opacity: 0;
     z-index: 10;
     bottom: 120%;
-    color: $green-hundred;
     font-size: 14px;
     padding: 8px 12px;
     background: white;
@@ -153,6 +152,7 @@ section {
     position: absolute;
     white-space: nowrap;
     pointer-events: none;
+    color: $green-hundred;
     transition: opacity 0.3s;
     transform: translateX(-50%);
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
