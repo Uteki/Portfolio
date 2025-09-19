@@ -24,6 +24,7 @@ section {
 
       > div {
         margin-top: 40px;
+        position: relative;
 
         > div {
           max-width: 880px;
@@ -47,7 +48,6 @@ section {
             font-family: "Karla";
             font-weight: 400;
             font-size: 18px;
-            leading-trim: NONE;
             line-height: 120%;
 
           }
@@ -57,10 +57,58 @@ section {
           }
 
           &:hover {
+            cursor: pointer;
             background: $green-hover;
           }
         }
       }
     }
   }
+}
+
+.test {
+  &::before {
+    content: "";
+    position: absolute;
+    border-radius: 10px;
+    background: repeating-linear-gradient(
+        135deg,
+        rgba(0, 224, 198, 0.4),
+        rgba(0, 224, 198, 0.4) 2px,
+        transparent 1px,
+        transparent 11px
+    );
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(20px, 20px);
+    width: 15vw;
+    max-width: 600px;
+    aspect-ratio: 16/10;
+    right: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
+  &::after {
+    border-radius: 10px;
+    content: "";
+    position: absolute;
+    right: 0;
+    background: url("/assets/img/previews/join.png") no-repeat center/contain;
+    width: 15vw;
+    max-width: 600px;
+    aspect-ratio: 16/10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    z-index: 1;
+  }
+}
+
+.test:hover::after {
+  opacity: 1;
+}
+.test:hover::before {
+  opacity: 1;
 }
