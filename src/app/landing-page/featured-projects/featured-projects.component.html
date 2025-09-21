@@ -6,7 +6,7 @@
       <p>Explore a selection of my work here - Interact with <br> projects to see my skills in action.</p>
 
       <ul>
-        <li *ngFor="let project of projects" [ngClass]="project.preview" class="project">
+        <li *ngFor="let project of projects; let i = index" [ngClass]="project.preview" class="project" (click)="openDialog(i)">
           <h4>{{ project.name }}</h4>
           <p>
             <ng-container *ngFor="let tech of project.tech; let last = last">
