@@ -1,12 +1,36 @@
 import { Component } from '@angular/core';
+import {FormsModule, NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [],
+  imports: [
+    FormsModule
+  ],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
 })
 export class ContactMeComponent {
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      console.log('Form submitted:', form.value);
+      //TODO
+    }
+  }
 
+  autoGrow(event: Event) {
+    const textarea = event.target as HTMLTextAreaElement;
+    textarea.style.height = "0px";
+    textarea.style.height = textarea.scrollHeight + "px";
+  }
+
+  hoverMiddle(isHovering: boolean) {
+    const labels = document.querySelectorAll('form label') as NodeListOf<HTMLElement>;
+    if (labels.length < 3) return;
+
+    labels[0].style.borderBottom = isHovering ? '0' : '';
+    labels[1].style.borderTop = isHovering ? '1px solid #3DCFB6' : '';
+    labels[1].style.borderBottom = isHovering ? '1px solid #3DCFB6' : '';
+    labels[2].style.borderTop = isHovering ? '0' : '';
+  }
 }

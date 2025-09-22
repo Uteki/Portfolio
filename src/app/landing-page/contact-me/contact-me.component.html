@@ -1,3 +1,53 @@
 <section>
-<p>contact-me works!</p>
+  <div class="max-wrapper">
+    <div>
+      <div>
+        <h2>Contact me</h2>
+        <h3>Let's work together</h3>
+
+        <h4>Got a problem to solve?</h4>
+
+        <p>
+          I build websites and applications that are functional, engaging, and user-friendly.
+          I’m open to remote work and collaborations, bringing technical expertise, creativity, and curiosity to every project.
+        </p>
+
+        <p>
+          Need a frontend developer? <span>Let’s talk;</span> <br> I’d love to add real value to your team or idea!
+        </p>
+      </div>
+
+      <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+        <label>
+          What's your name?
+          <input type="text" name="name" placeholder="Your name goes here" ngModel required>
+        </label>
+
+        <label
+          (mouseenter)="hoverMiddle(true)"
+          (mouseleave)="hoverMiddle(false)"
+          (touchstart)="hoverMiddle(true)"
+          (touchend)="hoverMiddle(false)">
+          What's your email?
+          <input type="email" name="email" placeholder="youremail@email.com" ngModel required>
+        </label>
+
+        <label>
+          How can I help you?
+          <textarea name="message" maxlength="800" placeholder="Hello Daniel, I am interested in..." ngModel required (input)="autoGrow($event)"></textarea>
+        </label>
+
+        <label class="custom-checkbox">
+          <input type="checkbox" name="subscribe" id="subscribe" required>
+          <span>
+            I've read the <a href="/privacy-policy" target="_blank">privacy policy</a>
+            and agree to the processing of my data as outlined.
+          </span>
+        </label>
+
+        <button type="submit" [disabled]="contactForm.invalid"><span>Say Hello ;)</span></button>
+      </form>
+
+    </div>
+  </div>
 </section>
