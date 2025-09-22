@@ -72,11 +72,11 @@ section {
           }
 
           &:nth-child(odd) {
-            border-top: 1px solid #3DCFB680;
-            border-bottom: 1px solid #3DCFB680;
+            border-top: 1px solid $green-fifty;
+            border-bottom: 1px solid $green-fifty;
 
             &:hover {
-              border-top: 1px solid #3DCFB6 !important;
+              border-top: 1px solid $green-hundred !important;
               border-bottom: 1px solid $green-hundred !important;
             }
           }
@@ -122,10 +122,11 @@ section {
           flex-direction: row;
 
           input[type="checkbox"] {
-            border: 2px solid #3DCFB680;
+            border: 2px solid $green-hundred;
             border-radius: 4px;
             position: relative;
             appearance: none;
+            min-width: 18px;
             cursor: pointer;
             height: 18px;
             width: 18px;
@@ -140,7 +141,15 @@ section {
             }
 
             &:hover {
-              background: #3DCFB64D;
+              &:before {
+                content: "";
+                width: 18px;
+                height: 18px;
+                position: absolute;
+                border-radius: 50%;
+                background: $green-hover;
+                transform: scale(1.65);
+              }
             }
           }
 
@@ -152,12 +161,12 @@ section {
             color: white;
 
             > a {
-              color: #3DCFB6;
               padding: 0 4px;
               font-size: 15px;
               font-weight: 400;
               line-height: 120%;
               letter-spacing: -3%;
+              color: $green-hundred;
               font-family: "Fira Code", monospace;
 
               &:hover {
