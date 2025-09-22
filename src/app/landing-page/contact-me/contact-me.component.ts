@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import {FormsModule, NgForm} from "@angular/forms";
 import {AnimationService} from "../../animation.service";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
