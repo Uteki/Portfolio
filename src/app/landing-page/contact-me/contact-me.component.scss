@@ -175,6 +175,19 @@ section {
           @include pill-button;
           align-self: center;
           color: white;
+
+          &:disabled {
+            border: 1px solid #FFFFFF80;
+            color: #FFFFFF80;
+
+            &:hover {
+              cursor: not-allowed;
+
+              > span {
+                color: #FFFFFF80;
+              }
+            }
+          }
         }
       }
     }

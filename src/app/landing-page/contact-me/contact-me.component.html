@@ -38,16 +38,23 @@
         </label>
 
         <label class="custom-checkbox">
-          <input type="checkbox" name="subscribe" id="subscribe" required>
+          <input type="checkbox" name="subscribe" id="subscribe" ngModel required>
+
           <span>
             I've read the <a href="/privacy-policy" target="_blank">privacy policy</a>
             and agree to the processing of my data as outlined.
           </span>
         </label>
 
-        <button type="submit" [disabled]="contactForm.invalid"><span>Say Hello ;)</span></button>
+        <button
+          (mouseenter)="onHover($event)"
+          (mouseleave)="onHoverOut($event)"
+          (touchstart)="onHover($event)"
+          (touchend)="onHoverOut($event)"
+          type="submit" [disabled]="contactForm.invalid">
+          <span>Say Hello ;)</span>
+        </button>
       </form>
-
     </div>
   </div>
 </section>
