@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import {AnimationService} from "../../animation.service";
 import {NgForOf} from "@angular/common";
+import {RouterLink} from "@angular/router";
+import {ScrollService} from "../../scroll.service";
 
 @Component({
   selector: 'app-skill-set',
   standalone: true,
   imports: [
-    NgForOf
+    NgForOf,
+    RouterLink
   ],
   templateUrl: './skill-set.component.html',
   styleUrl: './skill-set.component.scss'
@@ -43,7 +46,7 @@ export class SkillSetComponent {
     ]
   };
 
-  constructor(private animationService: AnimationService) {}
+  constructor(private animationService: AnimationService, private scrollService: ScrollService) {}
 
   onHover(event: Event) {
     const target = event.currentTarget as HTMLElement;
@@ -53,5 +56,9 @@ export class SkillSetComponent {
   onHoverOut(event: Event) {
     const target = event.currentTarget as HTMLElement;
     this.animationService.returnMarqueeBtnToCenter(target);
+  }
+
+  goToContact() {
+    this.scrollService.scrollToFragment('contact', 200);
   }
 }

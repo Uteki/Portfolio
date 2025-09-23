@@ -6,9 +6,18 @@
         <button id="lang-switch">DE</button>
       </div>
 
-      <a href="#">About me</a>
-      <a href="#">Skills</a>
-      <a href="#">Projects</a>
+      <a
+        [routerLink]="['/']" fragment="about"
+        (click)="goToMe()">
+        About me</a>
+      <a
+        [routerLink]="['/']" fragment="skills"
+        (click)="goToSkills()">
+        Skills</a>
+      <a
+        [routerLink]="['/']" fragment="projects"
+        (click)="goToProjects()">
+        Projects</a>
     </nav>
 
     <img alt="Logo" ngSrc="./assets/img/danieslogo.webp" height="365" width="902" priority>

@@ -1,13 +1,16 @@
 import {Component, HostListener} from '@angular/core';
 import {AnimationService} from "../../animation.service";
 import {NgForOf, NgOptimizedImage} from "@angular/common";
+import {RouterLink} from "@angular/router";
+import {ScrollService} from "../../scroll.service";
 
 @Component({
   selector: 'app-above-the-fold',
   standalone: true,
   imports: [
     NgOptimizedImage,
-    NgForOf
+    NgForOf,
+    RouterLink
   ],
   templateUrl: './above-the-fold.component.html',
   styleUrl: './above-the-fold.component.scss'
@@ -20,7 +23,7 @@ export class AboveTheFoldComponent {
     'Open to work'
   ];
 
-   constructor(private animationService: AnimationService) {}
+   constructor(private animationService: AnimationService, private scrollService: ScrollService) {}
 
   //TODO: Firefly
   @HostListener('document:mousemove', ['$event'])
@@ -38,5 +41,13 @@ export class AboveTheFoldComponent {
   onHoverOut(event: Event) {
     const target = event.currentTarget as HTMLElement;
     this.animationService.returnMarqueeBtnToCenter(target);
+  }
+
+  goToContact() {
+    this.scrollService.scrollToFragment('contact', 200);
+  }
+
+  goToProjects() {
+    this.scrollService.scrollToFragment('projects', 100);
   }
 }

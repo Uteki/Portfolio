@@ -1,4 +1,4 @@
-<section>
+<section id="skills">
   <div class="max-wrapper">
     <div>
       <article>
@@ -27,8 +27,8 @@
               (mouseleave)="onHoverOut($event)"
               (touchstart)="onHover($event)"
               (touchend)="onHoverOut($event)"
-              href="#"
-            >
+              [routerLink]="['/']" fragment="contact"
+              (click)="goToContact()">
               <span>Let's Talk</span>
             </a>
           </div>
