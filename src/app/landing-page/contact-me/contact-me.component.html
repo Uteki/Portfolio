@@ -20,7 +20,7 @@
       <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
         <label>
           What's your name?
-          <input #name="ngModel" #nameInput type="text" name="name" placeholder="Your name goes here" ngModel required>
+          <input [(ngModel)]="contactData.name" #name="ngModel" #nameInput type="text" name="name" placeholder="Your name goes here" ngModel required>
         </label>
 
         <label
@@ -29,12 +29,12 @@
           (touchstart)="hoverMiddle(true)"
           (touchend)="hoverMiddle(false)">
           What's your email?
-          <input #email="ngModel" #emailInput type="email" name="email" placeholder="youremail@email.com" ngModel required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+          <input [(ngModel)]="contactData.email" #email="ngModel" #emailInput type="email" name="email" placeholder="youremail@email.com" ngModel required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
         </label>
 
         <label>
           How can I help you?
-          <textarea #message="ngModel" #messageInput name="message" maxlength="800" placeholder="Hello Daniel, I am interested in..." ngModel required (input)="autoGrow($event)"></textarea>
+          <textarea [(ngModel)]="contactData.message" #message="ngModel" #messageInput name="message" maxlength="800" placeholder="Hello Daniel, I am interested in..." ngModel required (input)="autoGrow($event)"></textarea>
         </label>
 
         <label class="custom-checkbox" (click)="clearCheckboxError()">

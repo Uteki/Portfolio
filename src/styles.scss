@@ -64,3 +64,14 @@ $Portfolio-theme: mat.define-light-theme((
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 input, textarea { all: unset; }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #1C1C1C inset;
+  -webkit-text-fill-color: white;
+  transition: background-color 9999s ease-in-out 0s;
+}

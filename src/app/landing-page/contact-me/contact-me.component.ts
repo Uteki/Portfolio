@@ -1,7 +1,8 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, inject, ViewChild} from '@angular/core';
 import {FormsModule, NgForm} from "@angular/forms";
 import {AnimationService} from "../../animation.service";
 import {RouterLink} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-contact-me',
@@ -14,7 +15,27 @@ import {RouterLink} from "@angular/router";
   styleUrl: './contact-me.component.scss'
 })
 export class ContactMeComponent {
+  http = inject(HttpClient);
+
   showCheckboxError = false;
+  mailTest = true;
+
+  contactData = {
+    name : "",
+    email: "",
+    message: ""
+  }
+
+  post = {
+    endPoint: 'https://daniel-tran.com/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
 
   @ViewChild('nameInput') nameInput!: ElementRef<HTMLInputElement>;
   @ViewChild('emailInput') emailInput!: ElementRef<HTMLInputElement>;
@@ -45,6 +66,34 @@ export class ContactMeComponent {
       this.showCheckboxError = invalid;
     }
     return !!invalid;
+  }
+
+  private clearButtonAnimation() {
+    const button = document.querySelector('form button');
+    if (!button) return;
+
+    const span = button.querySelector('span');
+    if (span) {
+      span.style.animation = 'none';
+      setTimeout(() => span.style.animation = '', 0);
+    }
+  }
+
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            this.clearButtonAnimation(); ngForm.resetForm()
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+      this.clearButtonAnimation(); ngForm.resetForm()
+    }
   }
 
   checkForm(form: NgForm, hover: boolean) {
@@ -92,13 +141,6 @@ export class ContactMeComponent {
     const textarea = event.target as HTMLTextAreaElement;
     textarea.style.height = "0px";
     textarea.style.height = textarea.scrollHeight + "px";
-  }
-
-  onSubmit(form: NgForm) {
-    if (form.valid && form.submitted) {
-      console.log('Form submitted:', form.value);
-      //TODO
-    }
   }
 
   hoverMiddle(isHovering: boolean) {
