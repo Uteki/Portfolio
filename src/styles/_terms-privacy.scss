@@ -1,0 +1,35 @@
+@use "colors" as *;
+
+section {
+  padding-top: 200px;
+
+  > div {
+    > div {
+      > h2 {
+        font-family: "Fira Code", monospace !important;
+        text-align: center;
+        line-height: 120%;
+        font-weight: 700;
+        font-size: 64px;
+      }
+
+      > h3 {
+        color: white;
+        margin-bottom: 0;
+      }
+
+      > * {
+        font-family: "Karla", serif;
+        color: $green-hundred;
+      }
+
+      p {
+        margin-top: 0;
+      }
+
+      .highlight {
+        color: white;
+      }
+    }
+  }
+}

@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
+import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
+import {isPlatformBrowser} from "@angular/common";
 
 @Component({
   selector: 'app-legal-notice',
   standalone: true,
   imports: [],
   templateUrl: './legal-notice.component.html',
-  styleUrl: './legal-notice.component.scss'
+  styleUrl: '../../styles/_terms-privacy.scss'
 })
-export class LegalNoticeComponent {
+export class LegalNoticeComponent implements OnInit{
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.classList.add('terms-privacy');
+    }
+  }
 }
