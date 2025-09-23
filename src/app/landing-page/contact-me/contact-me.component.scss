@@ -202,3 +202,21 @@ section {
     }
   }
 }
+
+.error-placeholder::placeholder {
+  color: #EC7B7BCC !important;
+}
+
+.custom-checkbox {
+  position: relative;
+
+  span.error::before {
+    content: 'Please accept the privacy policy.';
+    transform: translateY(190%);
+    position: absolute;
+    color: #EC7B7BCC;
+    font-size: 14px;
+    display: block;
+    left: 0;
+  }
+}
