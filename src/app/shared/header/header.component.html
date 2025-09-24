@@ -6,14 +6,17 @@
         <button id="lang-switch" [class.active-lang]="currentLang === 'de'" (click)="switchLanguage('de')">DE</button>
       </div>
 
-      <a [routerLink]="['/']" fragment="about" (click)="goToMe()">
+      <a *ngIf="!isTermRoute" [routerLink]="['/']" fragment="about" (click)="goToMe()">
         {{ 'HEADER.ABOUT_ME' | translate }}
       </a>
-      <a [routerLink]="['/']" fragment="skills" (click)="goToSkills()">
+      <a *ngIf="!isTermRoute" [routerLink]="['/']" fragment="skills" (click)="goToSkills()">
         {{ 'HEADER.SKILLS' | translate }}
       </a>
-      <a [routerLink]="['/']" fragment="projects" (click)="goToProjects()">
+      <a *ngIf="!isTermRoute" [routerLink]="['/']" fragment="projects" (click)="goToProjects()">
         {{ 'HEADER.PROJECTS' | translate }}
+      </a>
+      <a *ngIf="isTermRoute" [routerLink]="['/']">
+        {{ 'HEADER.HOME' | translate }}
       </a>
     </nav>
 

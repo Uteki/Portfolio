@@ -1,7 +1,8 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
+import {isPlatformBrowser, NgIf} from '@angular/common';
 import { NgOptimizedImage } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { ScrollService } from '../../scroll.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -11,15 +12,17 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [
     NgOptimizedImage,
     RouterLink,
-    TranslateModule
+    TranslateModule,
+    NgIf
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   currentLang: string;
+  isTermRoute = false;
 
-  constructor(private scrollService: ScrollService, public translate: TranslateService, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(private scrollService: ScrollService, public translate: TranslateService, private router: Router,@Inject(PLATFORM_ID) private platformId: Object) {
     if (isPlatformBrowser(this.platformId)) {
       const savedLang = localStorage.getItem('lang') || 'en';
       this.currentLang = savedLang;
@@ -27,6 +30,15 @@ export class HeaderComponent {
     } else {
       this.currentLang = 'en';
     }
+  }
+
+  ngOnInit() {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(event => {
+        const navEnd = event as NavigationEnd;
+        this.isTermRoute = navEnd.urlAfterRedirects.includes('/legal-notice');
+      });
   }
 
   switchLanguage(lang: string) {
