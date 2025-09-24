@@ -1,8 +1,9 @@
-import {Component, HostListener} from '@angular/core';
-import {AnimationService} from "../../animation.service";
-import {NgForOf, NgOptimizedImage} from "@angular/common";
-import {RouterLink} from "@angular/router";
-import {ScrollService} from "../../scroll.service";
+import { Component, HostListener, OnInit } from '@angular/core';
+import { AnimationService } from "../../animation.service";
+import { NgForOf, NgOptimizedImage } from "@angular/common";
+import { RouterLink } from "@angular/router";
+import { ScrollService } from "../../scroll.service";
+import { TranslateService, TranslatePipe } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-above-the-fold',
@@ -10,27 +11,46 @@ import {ScrollService} from "../../scroll.service";
   imports: [
     NgOptimizedImage,
     NgForOf,
-    RouterLink
+    RouterLink,
+    TranslatePipe
   ],
   templateUrl: './above-the-fold.component.html',
   styleUrl: './above-the-fold.component.scss'
 })
-export class AboveTheFoldComponent {
-  items: string[] = [
-    'Available for remote work',
-    'Frontend Developer',
-    'Based in Munich',
-    'Open to work'
-  ];
+export class AboveTheFoldComponent implements OnInit {
+  items: string[] = [];
 
-   constructor(private animationService: AnimationService, private scrollService: ScrollService) {}
-
-  //TODO: Firefly
   @HostListener('document:mousemove', ['$event'])
-
   onMouseMove(event: MouseEvent) {
     document.body.style.setProperty('--x', `${event.clientX}px`);
     document.body.style.setProperty('--y', `${event.clientY}px`);
+  }
+
+  constructor(
+    private animationService: AnimationService,
+    private scrollService: ScrollService,
+    private translate: TranslateService
+  ) {}
+
+  ngOnInit() {
+    this.loadItems();
+
+    this.translate.onLangChange.subscribe(() => {
+      this.loadItems();
+    });
+  }
+
+  loadItems() {
+    const keys = [
+      'ABOVE.MARQUEE.AVAILABLE_REMOTE',
+      'ABOVE.MARQUEE.FRONTEND_DEV',
+      'ABOVE.MARQUEE.BASED_IN',
+      'ABOVE.MARQUEE.OPEN_TO_WORK'
+    ];
+
+    this.translate.get(keys).subscribe(translations => {
+      this.items = keys.map(key => translations[key]);
+    });
   }
 
   onHover(event: Event) {

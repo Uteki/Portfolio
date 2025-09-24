@@ -1,6 +1,6 @@
 <section>
   <div class="max-wrapper">
-    <h2>Frontend Developer</h2>
+    <h2>{{ 'ABOVE.DEVELOPER' | translate }}</h2>
     <h1>Daniel Tran</h1>
 
     <div>
@@ -11,7 +11,7 @@
         (touchend)="onHoverOut($event)"
         [routerLink]="['/']" fragment="projects"
         (click)="goToProjects()">
-        <span>Check my work</span>
+        <span>{{ 'ABOVE.CHECK' | translate }}</span>
       </a>
       <a
         (mouseenter)="onHover($event)"
@@ -20,7 +20,7 @@
         (touchend)="onHoverOut($event)"
         [routerLink]="['/']" fragment="contact"
         (click)="goToContact()">
-        <span>Contact me</span>
+        <span>{{ 'ABOVE.CONTACT' | translate }}</span>
       </a>
     </div>
   </div>

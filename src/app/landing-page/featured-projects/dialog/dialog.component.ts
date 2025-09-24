@@ -8,6 +8,7 @@ import {
   MatDialogTitle
 } from "@angular/material/dialog";
 import {LowerCasePipe, NgForOf, NgIf} from "@angular/common";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-dialog',
@@ -20,7 +21,8 @@ import {LowerCasePipe, NgForOf, NgIf} from "@angular/common";
     MatDialogTitle,
     NgForOf,
     NgIf,
-    LowerCasePipe
+    LowerCasePipe,
+    TranslatePipe
   ],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.scss'

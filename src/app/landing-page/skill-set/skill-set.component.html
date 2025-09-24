@@ -3,22 +3,18 @@
     <div>
       <article>
         <div>
-          <h2>Technologies</h2>
+          <h2>{{ 'SKILLS.TECH' | translate }}</h2>
 
           <div>
-            <h3>Skill Set</h3>
+            <h3>{{ 'SKILLS.SET' | translate }}</h3>
             <p>
-              I’ve worked with a wide range of front-end and back-end technologies, including Angular,
-              TypeScript, Firebase, Docker, Java, PHP, and SQL. I adapt quickly to new technologies,
-              continuously refine my skills and workflow, and treat every project as an opportunity to
-              learn, grow, and stay ahead in the fast-moving world of web development, delivering
-              efficient, scalable, and engaging solutions.
+              {{ 'SKILLS.INFO' | translate }}
             </p>
 
             <div>
-              <h4>You need <span>another skill?</span></h4>
+              <h4>{{ 'SKILLS.ANOTHER' | translate }} <span>{{ 'SKILLS.SKILL' | translate }}</span></h4>
               <p>
-                Feel free to contact me. I look forward to expanding on my previous knowledge.
+                {{ 'SKILLS.CONTACT' | translate }}
               </p>
             </div>
 
@@ -29,7 +25,7 @@
               (touchend)="onHoverOut($event)"
               [routerLink]="['/']" fragment="contact"
               (click)="goToContact()">
-              <span>Let's Talk</span>
+              <span>{{ 'SKILLS.TALK' | translate }}</span>
             </a>
           </div>
         </div>
@@ -49,7 +45,7 @@
             <figcaption [innerHTML]="growth.name"></figcaption>
 
             <div class="tooltip-content">
-              <p>I have a special interest in learning !</p>
+              <p>{{ 'SKILLS.INTERESTS' | translate }} !</p>
               <div>
                 <figure *ngFor="let learn of growth.learning">
                   <img [src]="learn.icon" [alt]="learn.name" width="30">

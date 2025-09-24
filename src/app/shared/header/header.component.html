@@ -2,22 +2,19 @@
   <div class="max-wrapper">
     <nav>
       <div>
-        <button id="lang" class="active-lang">EN</button>
-        <button id="lang-switch">DE</button>
+        <button id="lang" [class.active-lang]="currentLang === 'en'" (click)="switchLanguage('en')">EN</button>
+        <button id="lang-switch" [class.active-lang]="currentLang === 'de'" (click)="switchLanguage('de')">DE</button>
       </div>
 
-      <a
-        [routerLink]="['/']" fragment="about"
-        (click)="goToMe()">
-        About me</a>
-      <a
-        [routerLink]="['/']" fragment="skills"
-        (click)="goToSkills()">
-        Skills</a>
-      <a
-        [routerLink]="['/']" fragment="projects"
-        (click)="goToProjects()">
-        Projects</a>
+      <a [routerLink]="['/']" fragment="about" (click)="goToMe()">
+        {{ 'HEADER.ABOUT_ME' | translate }}
+      </a>
+      <a [routerLink]="['/']" fragment="skills" (click)="goToSkills()">
+        {{ 'HEADER.SKILLS' | translate }}
+      </a>
+      <a [routerLink]="['/']" fragment="projects" (click)="goToProjects()">
+        {{ 'HEADER.PROJECTS' | translate }}
+      </a>
     </nav>
 
     <img [routerLink]="['']" alt="Logo" ngSrc="./assets/img/danieslogo.webp" height="365" width="902" priority>

@@ -211,7 +211,7 @@ section {
   position: relative;
 
   span.error::before {
-    content: 'Please accept the privacy policy.';
+    content: '';
     transform: translateY(190%);
     position: absolute;
     color: #EC7B7BCC;
@@ -219,4 +219,13 @@ section {
     display: block;
     left: 0;
   }
+}
+
+.error-message {
+  position: absolute;
+  transform: translateY(190%);
+  color: #EC7B7BCC !important;
+  font-size: 14px;
+  display: block;
+  left: 0;
 }

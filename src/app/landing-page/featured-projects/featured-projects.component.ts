@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import {NgClass, NgForOf, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault} from "@angular/common";
-import {MatDialog} from "@angular/material/dialog";
-import {DialogComponent} from "./dialog/dialog.component";
+import { Component, OnInit } from '@angular/core';
+import { NgClass, NgForOf, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from "@angular/common";
+import { MatDialog } from "@angular/material/dialog";
+import { DialogComponent } from "./dialog/dialog.component";
+import { TranslateService, TranslatePipe } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-featured-projects',
@@ -12,12 +13,13 @@ import {DialogComponent} from "./dialog/dialog.component";
     NgForOf,
     NgSwitchCase,
     NgSwitchDefault,
-    NgIf
+    NgIf,
+    TranslatePipe
   ],
   templateUrl: './featured-projects.component.html',
   styleUrl: './featured-projects.component.scss'
 })
-export class FeaturedProjectsComponent {
+export class FeaturedProjectsComponent implements OnInit {
   projects = [
     {
       name: 'Pok-Dex',
@@ -26,7 +28,8 @@ export class FeaturedProjectsComponent {
       frame: 'assets/img/previews/pok-dex.png',
       github: 'https://github.com/Uteki/Pok-Dex',
       preview: 'pok-dex',
-      description: 'JavaScript-based project with a connection to the RESTful Pokémon API.',
+      descriptionKey: 'PORTFOLIO.PROJECTS.POK_DEX_DESC',
+      description: ''
     },
     {
       name: 'Join',
@@ -35,7 +38,8 @@ export class FeaturedProjectsComponent {
       frame: 'assets/img/previews/join.png',
       github: 'https://github.com/Uteki/Join',
       preview: 'join',
-      description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.'
+      descriptionKey: 'PORTFOLIO.PROJECTS.JOIN_DESC',
+      description: ''
     },
     {
       name: 'Sharkie',
@@ -44,7 +48,8 @@ export class FeaturedProjectsComponent {
       frame: 'assets/img/previews/sharkie.png',
       github: 'https://github.com/Uteki/Sharkie',
       preview: 'sharkie',
-      description: 'Underwater platformer based on object-oriented approach. Help Sharkie to find coins and bubbles to fight against the killer whale.'
+      descriptionKey: 'PORTFOLIO.PROJECTS.SHARKIE_DESC',
+      description: ''
     },
     {
       name: 'DA Bubble',
@@ -53,11 +58,32 @@ export class FeaturedProjectsComponent {
       frame: 'assets/img/previews/da_bubble.png',
       github: 'https://github.com/Uteki/da-bubble',
       preview: 'da_bubble',
-      description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.'
+      descriptionKey: 'PORTFOLIO.PROJECTS.DA_BUBBLE_DESC',
+      description: ''
     }
   ];
 
-  constructor(private dialog: MatDialog) {}
+  constructor(
+    private dialog: MatDialog,
+    private translate: TranslateService
+  ) {}
+
+  ngOnInit() {
+    this.loadTranslations();
+
+    this.translate.onLangChange.subscribe(() => {
+      this.loadTranslations();
+    });
+  }
+
+  loadTranslations() {
+    const keys = this.projects.map(p => p.descriptionKey);
+    this.translate.get(keys).subscribe(translations => {
+      this.projects.forEach(p => {
+        p.description = translations[p.descriptionKey];
+      });
+    });
+  }
 
   openDialog(index: number): void {
     this.dialog.open(DialogComponent, {

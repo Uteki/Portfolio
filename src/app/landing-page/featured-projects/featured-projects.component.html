@@ -2,8 +2,8 @@
   <div class="max-wrapper">
     <div>
       <h2>Portfolio</h2>
-      <h3>Featured Projects</h3>
-      <p>Explore a selection of my work here - Interact with <br> projects to see my skills in action.</p>
+      <h3>{{ 'PORTFOLIO.FEATURED' | translate }}</h3>
+      <p [innerHTML]="'PORTFOLIO.EXPLORE' | translate"></p>
 
       <ul>
         <li *ngFor="let project of projects; let i = index" [ngClass]="project.preview" class="project" (click)="openDialog(i)">

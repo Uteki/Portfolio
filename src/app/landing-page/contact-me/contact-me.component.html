@@ -2,25 +2,24 @@
   <div class="max-wrapper">
     <div>
       <div>
-        <h2>Contact me</h2>
-        <h3>Let's work together</h3>
+        <h2>{{ 'CONTACT.CONTACT' | translate }}</h2>
+        <h3>{{ 'CONTACT.TOGETHER' | translate }}</h3>
 
-        <h4>Got a problem to solve?</h4>
+        <h4>{{ 'CONTACT.PROBLEM' | translate }}</h4>
 
         <p>
-          I build websites and applications that are functional, engaging, and user-friendly.
-          I’m open to remote work and collaborations, bringing technical expertise, creativity, and curiosity to every project.
+          {{ 'CONTACT.INFO' | translate }}
         </p>
 
         <p>
-          Need a frontend developer? <span>Let’s talk;</span> <br> I’d love to add real value to your team or idea!
+          {{ 'CONTACT.IN_NEED' | translate }} <span>{{ 'CONTACT.TALK' | translate }}</span> <br> {{ 'CONTACT.VALUE' | translate }}
         </p>
       </div>
 
       <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
         <label>
-          What's your name?
-          <input [(ngModel)]="contactData.name" #name="ngModel" #nameInput type="text" name="name" placeholder="Your name goes here" ngModel required>
+          {{ 'CONTACT.YOUR_NAME' | translate }}
+          <input [(ngModel)]="contactData.name" #name="ngModel" #nameInput type="text" name="name" placeholder="{{ 'CONTACT.NAME_PLACEHOLDER' | translate }}" ngModel required (input)="onInputChange()">
         </label>
 
         <label
@@ -28,21 +27,25 @@
           (mouseleave)="hoverMiddle(false)"
           (touchstart)="hoverMiddle(true)"
           (touchend)="hoverMiddle(false)">
-          What's your email?
-          <input [(ngModel)]="contactData.email" #email="ngModel" #emailInput type="email" name="email" placeholder="youremail@email.com" ngModel required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+          {{ 'CONTACT.YOUR_EMAIL' | translate }}
+          <input [(ngModel)]="contactData.email" #email="ngModel" #emailInput type="email" name="email" placeholder="{{ 'CONTACT.EMAIL_PLACEHOLDER' | translate }}" ngModel required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" (input)="onInputChange()">
         </label>
 
         <label>
-          How can I help you?
-          <textarea [(ngModel)]="contactData.message" #message="ngModel" #messageInput name="message" maxlength="800" placeholder="Hello Daniel, I am interested in..." ngModel required (input)="autoGrow($event)"></textarea>
+          {{ 'CONTACT.MESSAGE' | translate }}
+          <textarea [(ngModel)]="contactData.message" #message="ngModel" #messageInput name="message" maxlength="800" placeholder="{{ 'CONTACT.MESSAGE_PLACEHOLDER' | translate }}" ngModel required (input)="autoGrow($event); onMessageChange($event)"></textarea>
         </label>
 
         <label class="custom-checkbox" (click)="clearCheckboxError()">
-          <input #checkbox="ngModel" #subscribeInput type="checkbox" name="subscribe" id="subscribe" ngModel required>
+          <input #checkbox="ngModel" #subscribeInput type="checkbox" name="subscribe" id="subscribe" ngModel required (change)="onInputChange()">
 
           <span [class.error]="showCheckboxError">
-            I've read the <a [routerLink]="['/privacy-policy']" target="_blank">privacy policy</a>
-            and agree to the processing of my data as outlined.
+            {{ 'CONTACT.CHECKBOX_1' | translate }} <a [routerLink]="['/privacy-policy']" (click)="scrollToTop()">{{ 'CONTACT.PRIVACY_POLICY' | translate }}</a>
+            {{ 'CONTACT.CHECKBOX_2' | translate }}
+          </span>
+
+          <span *ngIf="showCheckboxError" class="error-message">
+            {{ 'CONTACT.TERMS_ERROR' | translate }}
           </span>
         </label>
 
@@ -52,7 +55,7 @@
           (touchstart)="onHover($event); checkForm(contactForm, true)"
           (touchend)="onHoverOut($event); checkForm(contactForm, false)"
           type="submit" [disabled]="contactForm.invalid">
-          <span>Say Hello ;)</span>
+          <span>{{ 'CONTACT.SAY' | translate }}</span>
         </button>
       </form>
     </div>

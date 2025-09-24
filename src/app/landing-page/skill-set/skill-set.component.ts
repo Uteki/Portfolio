@@ -1,20 +1,22 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AnimationService} from "../../animation.service";
 import {NgForOf} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {ScrollService} from "../../scroll.service";
+import {TranslatePipe, TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-skill-set',
   standalone: true,
   imports: [
     NgForOf,
-    RouterLink
+    RouterLink,
+    TranslatePipe
   ],
   templateUrl: './skill-set.component.html',
   styleUrl: './skill-set.component.scss'
 })
-export class SkillSetComponent {
+export class SkillSetComponent implements OnInit {
   skills = [
     { name: 'HTML', icon: 'assets/img/icons/skills/html.svg' },
     { name: 'CSS', icon: 'assets/img/icons/skills/css.svg' },
@@ -46,7 +48,25 @@ export class SkillSetComponent {
     ]
   };
 
-  constructor(private animationService: AnimationService, private scrollService: ScrollService) {}
+  constructor(
+    private animationService: AnimationService,
+    private scrollService: ScrollService,
+    private translate: TranslateService
+  ) {}
+
+  ngOnInit() {
+    this.loadGrowthName();
+
+    this.translate.onLangChange.subscribe(() => {
+      this.loadGrowthName();
+    });
+  }
+
+  loadGrowthName() {
+    this.translate.get('SKILLS.MINDSET').subscribe(translated => {
+      this.growth.name = translated;
+    });
+  }
 
   onHover(event: Event) {
     const target = event.currentTarget as HTMLElement;

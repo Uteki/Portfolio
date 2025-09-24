@@ -1,10 +1,13 @@
 import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {isPlatformBrowser} from "@angular/common";
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-legal-notice',
   standalone: true,
-  imports: [],
+  imports: [
+    TranslatePipe
+  ],
   templateUrl: './legal-notice.component.html',
   styleUrl: '../../styles/_terms-privacy.scss'
 })

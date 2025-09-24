@@ -1,0 +1,146 @@
+{
+  "HEADER": {
+    "ABOUT_ME": "Über mich",
+    "SKILLS": "Fähigkeiten",
+    "PROJECTS": "Projekte"
+  },
+
+  "ABOVE": {
+    "DEVELOPER": "Frontend Entwickler",
+    "CHECK": "Was ich tue",
+    "CONTACT": "Meld dich",
+    "MARQUEE": {
+      "AVAILABLE_REMOTE": "Verfügbar für Remote-Arbeit",
+      "FRONTEND_DEV": "Frontend Entwickler",
+      "BASED_IN": "Basierend in München",
+      "OPEN_TO_WORK": "Offen für Arbeit"
+    }
+  },
+
+  "ABOUT": {
+    "WHO": "Wer bin ich",
+    "ABOUT": "Über mich",
+    "ME": "Hi, ich bin Daniel! Ich arbeite seit über dreieinhalb Jahren in der Webentwicklung, angefangen mit meiner Ausbildung. Ich liebe es, die Logik der Informatik mit der Kreativität des Designs zu verbinden und Websites sowie Anwendungen zu entwickeln, die funktional und zugleich ansprechend sind.",
+    "LOCATION": "Ich bin in München ansässig, fühle mich aber in flexiblen Arbeitsumgebungen wohl. Remote-Arbeit passt perfekt zu mir, und ich bin offen für einen Umzug, wenn die richtige Gelegenheit kommt.",
+    "UP_2_DATE": "Neuen Technologien, Tools und Frameworks begegne ich mit Neugier und Begeisterung. Lernen bedeutet für mich nicht nur Schritt zu halten, sondern auch Innovationen zu schaffen, frische Ideen einzubringen und die eigenen Grenzen zu erweitern.",
+    "COGNITION": "Ich gehe Herausforderungen mit analytischem Denken, Kreativität und Durchhaltevermögen an. Ich experimentiere gerne, um elegante und effiziente Lösungen zu finden. Für mich ist Programmieren mehr als Aufgaben erledigen. Es geht darum, langlebige Lösungen zu schaffen."
+  },
+
+  "SKILLS": {
+    "TECH": "Technologien",
+    "SET": "Kompetenzen",
+    "INFO": "Ich habe mit einer Vielzahl von Frontend- und Backend-Technologien gearbeitet, darunter Angular, TypeScript, Firebase, Docker, Java, PHP und SQL. Ich passe mich schnell an neue Technologien an, verfeinere kontinuierlich meine Fähigkeiten und Arbeitsweise und sehe jedes Projekt als Gelegenheit, zu lernen, zu wachsen und in der schnelllebigen Welt der Webentwicklung stets einen Schritt voraus zu sein, um effiziente, skalierbare und ansprechende Lösungen zu liefern.",
+    "ANOTHER": "Du brauchst",
+    "SKILL": "eine Fähigkeit?",
+    "CONTACT": "Kontaktiere mich gerne. Ich freue mich darauf, mein Wissen weiter auszubauen.",
+    "TALK": "Schreib mir",
+    "INTERESTS": "Ich habe ein besonderes Interesse an",
+    "MINDSET": "Lernmentalität"
+  },
+
+  "PORTFOLIO": {
+    "FEATURED": "Ausgewählte Projekte",
+    "EXPLORE": "Entdecke hier eine Auswahl meiner Arbeiten – Interagiere mit den <br> Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+    "DIALOG": {
+      "ABOUT": "Worum geht es in diesem Projekt?",
+      "PREVIOUS": "Zurück",
+      "NEXT": "Weiter"
+    },
+    "PROJECTS": {
+      "POK_DEX_DESC": "JavaScript-basiertes Projekt mit einer Verbindung zur RESTful Pokémon API.",
+      "JOIN_DESC": "Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag & Drop, weise Benutzer und Kategorien zu.",
+      "SHARKIE_DESC": "Unterwasser-Platformer basierend auf objektorientiertem Ansatz. Hilf Sharkie, Münzen und Blasen zu sammeln, um gegen den Schwertwal zu kämpfen.",
+      "DA_BUBBLE_DESC": "Diese App ist eine Slack-Klon-App. Sie revolutioniert die Teamkommunikation und Zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Nachrichten und einer robusten Kanalorganisation."
+    }
+  },
+
+  "COLLEAGUES": {
+    "SAY": "Was meine Kollegen über mich sagen",
+    "COL_1": "L. Hamacher – Full Stack Entwickler",
+    "COL_1_TEXT": "Die Zusammenarbeit mit ihm war eine großartige Erfahrung. Er ist sehr kompetent, lernt schnell und ist ein echter Teamplayer. Ich würde jederzeit gerne wieder mit ihm zusammenarbeiten.",
+    "COL_2": "Philip – Fachinformatiker für Anwendungsentwicklung",
+    "COL_2_TEXT": "Er war ein Jahr jünger im Programm, und ich hatte die Gelegenheit, ihm verschiedene Fähigkeiten zu vermitteln. Er war wissbegierig, nahm neues Wissen schnell auf und ging jede Aufgabe mit Neugier und Begeisterung an.",
+    "COL_3": "F. Yilmaz – Senior SEO Manager:in",
+    "COL_3_TEXT": "Ich erkannte ihn als vielversprechenden Kandidaten für unsere Ausbildung. Während unserer gemeinsamen Zeit zeigte er große Begeisterung und Engagement, lernte SEO von mir und setzte seine neuen Fähigkeiten schnell um. Seine Neugier und Motivation machten ihn besonders bemerkenswert.",
+    "COL_4": "A. Petrović – Softwareentwickler",
+    "COL_4_TEXT": "Ich traf ihn zum ersten Mal während seines Praktikums bei mir und erkannte sofort sein Potenzial in der Softwareentwicklung. Ich unterstützte ihn bei der Suche nach einer passenden Ausbildungsstelle, und er zeigte stets Motivation, Neugier und Lernbereitschaft.",
+    "COL_5": "Markus – Frontend Entwickler Mentor",
+    "COL_5_TEXT": "Ich hatte das Vergnügen, ihn während seiner Ausbildung im Frontend-Development zu betreuen. Auch wenn die Arbeitspflichten schließlich meine Lehrzeit begrenzten, war ich stets beeindruckt von seiner Einsatzbereitschaft, Neugier und schnellen Lernfähigkeit. Ich hätte ihn gerne weiterhin begleitet, da er großes Potenzial und Begeisterung zeigte."
+  },
+
+  "CONTACT": {
+    "CONTACT": "Kontaktiere mich",
+    "TOGETHER": "Lass uns zusammenarbeiten",
+    "PROBLEM": "Hast du ein Problem zu lösen?",
+    "INFO": "Ich entwickle Websites und Anwendungen, die funktional, ansprechend und benutzerfreundlich sind. Ich bin offen für Remote-Arbeit und Kooperationen und bringe technisches Fachwissen, Kreativität und Neugier in jedes Projekt ein.",
+    "IN_NEED": "Brauchst du einen Frontend-Entwickler?",
+    "TALK": "Lass uns reden;",
+    "VALUE": "Ich würde gerne echten Mehrwert für dein Team oder deine Idee schaffen!",
+    "YOUR_NAME": "Wie heißt du?",
+    "NAME_PLACEHOLDER": "Dein Name hier",
+    "NAME_ERROR": "Ups! Dein Name fehlt",
+    "YOUR_EMAIL": "Wie lautet deine E-Mail?",
+    "EMAIL_PLACEHOLDER": "deine@email.com",
+    "EMAIL_ERROR": "Hoppla! Deine E-Mail wird benötigt",
+    "MESSAGE": "Wie kann ich dir helfen?",
+    "MESSAGE_PLACEHOLDER": "Hallo Daniel, ich interessiere mich für...",
+    "MESSAGE_ERROR": "Was soll entwickelt werden?",
+    "CHECKBOX_1": "Ich habe die",
+    "CHECKBOX_2": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+    "PRIVACY_POLICY": "Datenschutzerklärung",
+    "TERMS_ERROR": "Bitte akzeptiere die Datenschutzerklärung.",
+    "SAY": "Servus ;)"
+  },
+
+  "PRIVACY": {
+    "TITLE": "Datenschutzerklärung",
+    "H3_INTRODUCTION": "Einleitung",
+    "INTRODUCTION": "Ich respektiere Ihre Privatsphäre und nehme den Schutz Ihrer persönlichen Daten sehr ernst. Diese Datenschutzerklärung erklärt, wie ich mit Informationen umgehe, wenn Sie <span class='highlight'>Portfolio</span> (meine persönliche Website) besuchen und nutzen.",
+    "H3_INFO_COLLECT": "Welche Informationen ich sammle",
+    "INFO_COLLECT": "Ich erhebe, verarbeite oder speichere keine personenbezogenen Daten von Besuchern aktiv. Bestimmte technische Informationen (wie IP-Adresse, Browsertyp und allgemeine Nutzungsdaten) können jedoch automatisch von Ihrem Browser oder meinem Hosting-Anbieter erfasst werden, um die grundlegende Funktionalität und Sicherheit der Website zu gewährleisten.",
+    "H3_USE_INFO": "Verwendung der Informationen",
+    "USE_INFO": "Alle automatisch erfassten Informationen werden ausschließlich dazu verwendet, die Leistung, Funktionalität und Sicherheit von <span class='highlight'>Portfolio</span> aufrechtzuerhalten und zu verbessern. Ich verwende Ihre Daten nicht für Marketing-, Profiling- oder kommerzielle Zwecke.",
+    "H3_COOKIES": "Cookies",
+    "COOKIES": "<span class='highlight'>Portfolio</span> selbst verwendet keine Cookies. Drittanbieter oder der Hosting-Anbieter können jedoch Cookies für den technischen Betrieb einsetzen. Sie können Cookies jederzeit über Ihre Browsereinstellungen verwalten oder blockieren.",
+    "H3_THIRD_PARTY": "Drittanbieterdienste",
+    "THIRD_PARTY": "Diese Website kann Links zu externen Websites enthalten. Für die Datenschutzpraktiken oder Inhalte dieser externen Dienste bin ich nicht verantwortlich. Der Besuch solcher Seiten erfolgt auf eigenes Risiko.",
+    "H3_DATA_SECURITY": "Datensicherheit",
+    "DATA_SECURITY": "Ich treffe angemessene Maßnahmen, um Ihre Daten zu schützen. Wie bei jedem Online-Dienst kann jedoch kein vollständiger Schutz vor allen Risiken garantiert werden. Bitte nutzen Sie diese Website mit diesem Verständnis.",
+    "H3_YOUR_RIGHTS": "Ihre Rechte",
+    "YOUR_RIGHTS": "Als Besucher haben Sie das Recht, Auskunft über eventuell erhobene personenbezogene Daten zu verlangen sowie deren Berichtigung oder Löschung, soweit dies zutrifft. Da <span class='highlight'>Portfolio</span> keine personenbezogenen Daten absichtlich speichert, können solche Anfragen nur eingeschränkt beantwortet werden.",
+    "H3_CHANGES": "Änderungen dieser Datenschutzerklärung",
+    "CHANGES": "Ich kann diese Datenschutzerklärung von Zeit zu Zeit aktualisieren, um Änderungen gesetzlicher Anforderungen oder technischer Gegebenheiten zu berücksichtigen. Aktualisierungen werden auf dieser Seite veröffentlicht.",
+    "H3_CONTACT": "Kontakt",
+    "CONTACT": "Bei Fragen zu dieser Datenschutzerklärung kontaktieren Sie mich bitte unter <a href='mailto:danietr99@gmail.com'>danietr99@gmail.com</a>.",
+    "DATE": "Datum: 26. Juli 2025"
+  },
+
+  "LEGAL_NOTICE": {
+    "TITLE": "Impressum",
+    "H3_IMPRINT": "Impressum",
+    "IMPRINT": "<ul><li>Daniel Tran</li><li>Wellenkampstraße 15</li><li>80933 München</li></ul>",
+    "H3_EXPLORING": "Kontakt",
+    "EXPLORING": "E-Mail: <a href='mailto:danietr99@gmail.com'>danietr99@gmail.com</a>",
+    "H3_ACCEPTANCE": "Akzeptanz der Bedingungen",
+    "ACCEPTANCE": "Durch den Zugriff auf und die Nutzung von <span class='highlight'>Portfolio</span> (Produkt) erkennen Sie die folgenden Geschäftsbedingungen und alle Richtlinien, Leitlinien oder Änderungen an, die Ihnen von Zeit zu Zeit vorgelegt werden können. Wir, die aufgeführten Studenten, können die Bedingungen jederzeit ohne vorherige Ankündigung ändern.",
+    "H3_SCOPE": "Umfang und Eigentum des Produkts",
+    "SCOPE": "<span class='highlight'>Portfolio</span> wurde im Rahmen eines Studentenprojekts in einem Webentwicklungs-Bootcamp an der <span class='highlight'>Developer Akademie GmbH</span> entwickelt. Es hat einen Bildungszweck und ist nicht für umfangreiche persönliche oder geschäftliche Nutzung vorgesehen. Daher können wir keine gleichbleibende Verfügbarkeit, Zuverlässigkeit, Genauigkeit oder andere Qualitätsaspekte garantieren.",
+    "SCOPE_2": "Das Design von <span class='highlight'>Portfolio</span> gehört der <span class='highlight'>Developer Akademie GmbH</span>. Die unbefugte Nutzung, Vervielfältigung, Modifikation, Verbreitung oder Reproduktion des Designs ist strengstens untersagt.",
+    "H3_PROPRIETARY": "Eigentumsrechte",
+    "PROPRIETARY": "Abgesehen vom Design, das der <span class='highlight'>Developer Akademie GmbH</span> gehört, behalten wir, die aufgeführten Studenten, alle Eigentumsrechte an <span class='highlight'>Portfolio</span>, einschließlich aller damit verbundenen <a href='#'>urheberrechtlich geschützten Materialien, Marken und anderen proprietären Informationen</a>.",
+    "H3_USE": "Nutzung des Produkts",
+    "USE": "<span class='highlight'>Portfolio</span> darf nur für rechtmäßige Zwecke genutzt werden, gemäß allen geltenden Gesetzen und Vorschriften. Jede Nutzung von <span class='highlight'>Portfolio</span> für illegale Aktivitäten oder um andere Personen zu belästigen, zu schädigen, zu bedrohen oder einzuschüchtern, ist strengstens untersagt. Sie sind allein verantwortlich für Ihre Interaktionen mit anderen Nutzern von <span class='highlight'>Portfolio</span>.",
+    "H3_DISCLAIMER": "Haftungsausschluss und Haftungsbeschränkung",
+    "DISCLAIMER": "<span class='highlight'>Portfolio</span> wird 'wie besehen' bereitgestellt, ohne jegliche ausdrückliche oder stillschweigende Garantie, einschließlich, aber nicht beschränkt auf die stillschweigenden Garantien der Marktgängigkeit, Eignung für einen bestimmten Zweck und Nichtverletzung. Weder wir, die aufgeführten Studenten, noch die Developer Akademie haften für direkte, indirekte, zufällige, spezielle, Folgeschäden oder beispielhafte Schäden, einschließlich, aber nicht beschränkt auf, Schäden durch entgangene Gewinne, Goodwill, Nutzung, Daten oder andere immaterielle Verluste, selbst wenn wir auf die Möglichkeit solcher Schäden hingewiesen wurden, die aus der Nutzung oder Leistung von <span class='highlight'>Portfolio</span> entstehen.",
+    "H3_INDEMNITY": "Entschädigung",
+    "INDEMNITY": "Sie erklären sich damit einverstanden, uns, die aufgeführten Studenten, die Developer Akademie und unsere Partner, Mitarbeiter, Direktoren, Vertreter und Angestellten von allen Ansprüchen, Verlusten, Schäden, Kosten oder Haftungen (einschließlich angemessener Anwaltskosten) freizustellen, zu verteidigen und schadlos zu halten, die aus Ihrer Nutzung von <span class='highlight'>Portfolio</span> und/oder Ihrem Verstoß gegen dieses Impressum entstehen.",
+    "CONTACT": "Für Fragen oder Mitteilungen kontaktieren Sie uns bitte unter <a href='mailto:danietr99@gmail.com'>danietr99@gmail.com</a>.",
+    "DATE": "Datum: 26. Juli 2025"
+  },
+
+  "FOOTER": {
+    "DEVELOPER": "Webentwickler",
+    "ADDRESS": "München Deutschland",
+    "LEGAL_NOTICE": "Impressum"
+  }
+}

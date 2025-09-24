@@ -1,10 +1,11 @@
 import {AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {TranslatePipe} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-colleagues-say',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './colleagues-say.component.html',
   styleUrls: ['./colleagues-say.component.scss'],
