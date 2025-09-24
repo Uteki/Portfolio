@@ -49,6 +49,13 @@
           </span>
         </label>
 
+        <div *ngIf="successMessageVisible"
+             class="success-message"
+             [class.show]="!successMessageHide"
+             [class.hide]="successMessageHide">
+          {{ 'CONTACT.MESSAGE_SENT' | translate }}
+        </div>
+
         <button
           (mouseenter)="onHover($event); checkForm(contactForm, true)"
           (mouseleave)="onHoverOut($event); checkForm(contactForm, false)"

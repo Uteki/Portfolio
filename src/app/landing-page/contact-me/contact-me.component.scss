@@ -229,3 +229,33 @@ section {
   display: block;
   left: 0;
 }
+
+.success-message {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  background: rgba(255, 255, 255, 0.1215686275);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-family: "Fira Code", monospace;
+  border-left: 4px solid $green-fifty;
+  color: $green-hundred;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  padding: 12px 16px;
+  font-weight: 500;
+  position: fixed;
+  z-index: 1000;
+  left: -100%;
+  opacity: 0;
+  top: 33%;
+
+  &.show {
+    left: 50%;
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+
+  &.hide {
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}

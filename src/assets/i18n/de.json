@@ -86,6 +86,7 @@
     "MESSAGE": "Wie kann ich dir helfen?",
     "MESSAGE_PLACEHOLDER": "Hallo Daniel, ich interessiere mich für...",
     "MESSAGE_ERROR": "Was soll entwickelt werden?",
+    "MESSAGE_SENT": "Nachricht erfolgreich gesendet!",
     "CHECKBOX_1": "Ich habe die",
     "CHECKBOX_2": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
     "PRIVACY_POLICY": "Datenschutzerklärung",

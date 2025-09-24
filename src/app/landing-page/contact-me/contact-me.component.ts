@@ -31,6 +31,8 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
   http = inject(HttpClient);
   message: string = '';
 
+  successMessageVisible = false;
+  successMessageHide = false;
   showCheckboxError = false;
   mailTest = true;
 
@@ -179,17 +181,28 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
-          next: (response) => {
-            this.contactService.clearData(); this.clearButtonAnimation(); ngForm.resetForm()
-          },
-          error: (error) => {
-            console.error(error);
-          },
+          next: (response) => { this.successfulSend(ngForm) },
+          error: (error) => { console.error(error) },
           complete: () => console.info('send post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      this.contactService.clearData(); this.clearButtonAnimation(); ngForm.resetForm();
+      this.successfulSend(ngForm)
     }
+  }
+
+  successfulSend(ngForm: NgForm) {
+    this.contactService.clearData(); this.clearButtonAnimation(); ngForm.resetForm()
+
+    this.successMessageVisible = true;
+    this.successMessageHide = false;
+
+    setTimeout(() => {
+      this.successMessageHide = true;
+
+      setTimeout(() => {
+        this.successMessageVisible = false;
+      }, 500);
+    }, 3000);
   }
 
   checkForm(form: NgForm, hover: boolean) {
