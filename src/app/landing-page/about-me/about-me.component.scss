@@ -78,9 +78,6 @@ section {
             backdrop-filter: blur(4px);
             border: 1px solid $green-hundred;
 
-            //TODO - Remove when responsive styling
-            overflow-y: hidden;
-
             > h3 {
               margin: 0;
               font-size: 64px;
@@ -228,7 +225,7 @@ figure figcaption::after {
             > div {
               > h3 {
                 font-size: 56px;
-                line-height: 80%;
+                line-height: 90%;
                 letter-spacing: -3%;
               }
 

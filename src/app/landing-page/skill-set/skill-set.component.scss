@@ -18,9 +18,6 @@ section {
         min-width: 300px;
         margin: 0 25px 0 0;
 
-        //TODO - Remove when responsive styling
-        overflow-y: hidden;
-
         > div {
           > h2 {
             color: $green-hundred;
@@ -79,7 +76,7 @@ section {
       }
 
       > div {
-        gap: 2rem;
+        gap: 30px;
         width: 100%;
         flex: 1 1 50%;
         display: grid;
@@ -112,7 +109,7 @@ section {
 
             &:hover {
               > img {
-                  transform: scale(1.05);
+                transform: scale(1.05);
               }
             }
           }
@@ -121,7 +118,7 @@ section {
             margin: 0;
           }
 
-          &:nth-last-child(2) {
+          &:last-child {
             figure:hover {
               color: $green-hundred;
               transition: opacity 0.5s ease;
@@ -207,5 +204,178 @@ section {
 
   &:hover > div {
     opacity: 1;
+  }
+}
+
+@media (max-width: 1400px) {
+  section {
+    > div {
+      > div {
+        > article {
+          > div {
+            > div {
+              max-height: unset;
+            }
+          }
+        }
+
+        > div {
+          gap: 30px 15px;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  section {
+    > div {
+      > div {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+        > article {
+          margin-bottom: 58px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  section {
+    > div {
+      > div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
+        > article {
+          display: flex;
+          justify-content: center;
+          margin-right: 0;
+
+          > div {
+            > div {
+              max-width: 568px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    > div {
+      > div {
+        > article {
+          min-width: unset;
+
+          > div {
+            > h2 {
+              font-size: 18px;
+            }
+
+            > div {
+              > h3 {
+                font-size: 56px;
+                line-height: 80%;
+                letter-spacing: -3%;
+                word-break: break-all;
+              }
+
+              > p {
+                font-size: 16px;
+                text-align: justify;
+              }
+
+              > div {
+                > h4 {
+                  font-size: 20px;
+                  line-height: 120%;
+                }
+
+                > p {
+                  font-size: 16px;
+                  line-height: 120%;
+                }
+              }
+
+              > a {
+                > span {
+                  font-size: 18px;
+                  line-height: 120%;
+                }
+              }
+            }
+          }
+        }
+
+        > div {
+          min-width: unset;
+
+          div {
+            figure {
+              figcaption {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 120%;
+                text-align: center;
+                letter-spacing: -3%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    > div {
+      > div {
+        > div {
+          gap: 15px 0;
+          div {
+            figure {
+              img {
+                max-height: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    > div {
+      > div {
+        > div {
+          > div {
+            @for $i from 1 through 19 {
+              &:nth-child(#{$i}) {
+                > figure > img {
+                  animation: pulse 2s infinite ease-in-out;
+                  animation-delay: #{$i * 0.15}s;
+                }
+              }
+            }
+          }
+
+          > div:last-child {
+            grid-column: 1 / -1;
+            justify-self: center;
+          }
+        }
+      }
+    }
   }
 }

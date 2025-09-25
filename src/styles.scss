@@ -116,3 +116,9 @@ body.terms-privacy app-root {
   scrollbar-width: thin;
   scrollbar-color: #00b3ad #1C1C1C;
 }
+
+@media (max-width: 360px) {
+  p {
+    text-align: unset !important;
+  }
+}
