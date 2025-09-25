@@ -1,7 +1,7 @@
 {
   "HEADER": {
     "ABOUT_ME": "Über mich",
-    "SKILLS": "Fähigkeiten",
+    "SKILLS": "Skills",
     "PROJECTS": "Projekte",
     "HOME": "Startseite"
   },
@@ -22,15 +22,15 @@
     "WHO": "Wer bin ich",
     "ABOUT": "Über mich",
     "ME": "Hi, ich bin Daniel! Ich arbeite seit über dreieinhalb Jahren in der Webentwicklung, angefangen mit meiner Ausbildung. Ich liebe es, die Logik der Informatik mit der Kreativität des Designs zu verbinden und Websites sowie Anwendungen zu entwickeln, die funktional und zugleich ansprechend sind.",
-    "LOCATION": "Ich bin in München ansässig, fühle mich aber in flexiblen Arbeitsumgebungen wohl. Remote-Arbeit passt perfekt zu mir, und ich bin offen für einen Umzug, wenn die richtige Gelegenheit kommt.",
-    "UP_2_DATE": "Neuen Technologien, Tools und Frameworks begegne ich mit Neugier und Begeisterung. Lernen bedeutet für mich nicht nur Schritt zu halten, sondern auch Innovationen zu schaffen, frische Ideen einzubringen und die eigenen Grenzen zu erweitern.",
+    "LOCATION": "Ich bin in München ansässig, fühle mich aber in flexiblen Arbeitsumgebungen wohl. Remote-Arbeit passt perfekt zu mir, ich bin aber auch für einen Umzug offen, wenn sich die richtige Gelegenheit bietet.",
+    "UP_2_DATE": "Technologien, Tools und Frameworks begegne ich mit Neugier und Begeisterung. Lernen bedeutet für mich nicht nur Schritt zu halten, sondern auch Innovationen zu schaffen, frische Ideen einzubringen und die eigenen Grenzen zu erweitern.",
     "COGNITION": "Ich gehe Herausforderungen mit analytischem Denken, Kreativität und Durchhaltevermögen an. Ich experimentiere gerne, um elegante und effiziente Lösungen zu finden. Für mich ist Programmieren mehr als Aufgaben erledigen. Es geht darum, langlebige Lösungen zu schaffen."
   },
 
   "SKILLS": {
     "TECH": "Technologien",
     "SET": "Kompetenzen",
-    "INFO": "Ich habe mit einer Vielzahl von Frontend- und Backend-Technologien gearbeitet, darunter Angular, TypeScript, Firebase, Docker, Java, PHP und SQL. Ich passe mich schnell an neue Technologien an, verfeinere kontinuierlich meine Fähigkeiten und Arbeitsweise und sehe jedes Projekt als Gelegenheit, zu lernen, zu wachsen und in der schnelllebigen Welt der Webentwicklung stets einen Schritt voraus zu sein, um effiziente, skalierbare und ansprechende Lösungen zu liefern.",
+    "INFO": "Ich habe mit zahlreichen Frontend- und Backend-Technologien wie Angular, TypeScript, Firebase, Docker, Java, PHP und SQL gearbeitet. Ich passe mich schnell an, entwickle meine Fähigkeiten stetig weiter und sehe jedes Projekt als Chance, zu lernen, zu wachsen und effiziente, skalierbare sowie ansprechende Lösungen in der dynamischen Webentwicklung zu schaffen.",
     "ANOTHER": "Du brauchst",
     "SKILL": "eine Fähigkeit?",
     "CONTACT": "Kontaktiere mich gerne. Ich freue mich darauf, mein Wissen weiter auszubauen.",
@@ -66,7 +66,7 @@
     "COL_4": "A. Petrović – Softwareentwickler",
     "COL_4_TEXT": "Ich traf ihn zum ersten Mal während seines Praktikums bei mir und erkannte sofort sein Potenzial in der Softwareentwicklung. Ich unterstützte ihn bei der Suche nach einer passenden Ausbildungsstelle, und er zeigte stets Motivation, Neugier und Lernbereitschaft.",
     "COL_5": "Markus – Frontend Entwickler Mentor",
-    "COL_5_TEXT": "Ich hatte das Vergnügen, ihn während seiner Ausbildung im Frontend-Development zu betreuen. Auch wenn die Arbeitspflichten schließlich meine Lehrzeit begrenzten, war ich stets beeindruckt von seiner Einsatzbereitschaft, Neugier und schnellen Lernfähigkeit. Ich hätte ihn gerne weiterhin begleitet, da er großes Potenzial und Begeisterung zeigte."
+    "COL_5_TEXT": "Ich hatte das Vergnügen, ihn während seiner Ausbildung zu betreuen. Auch wenn die Arbeitspflichten schließlich meine Lehrzeit begrenzten, war ich stets beeindruckt von seiner Einsatzbereitschaft und Neugier. Ich hätte ihn gerne weiterhin begleitet, da er großes Potenzial und Begeisterung zeigte."
   },
 
   "CONTACT": {

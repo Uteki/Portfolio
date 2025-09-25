@@ -34,6 +34,12 @@ footer {
         &:hover {}
       }
 
+      > p, address {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+      }
+
       > p {
         margin: 24px 0 0 0;
       }
@@ -94,6 +100,48 @@ footer {
           }
         }
       }
+    }
+  }
+
+  > p {
+    margin: 0;
+    display: none;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+    color: $green-hundred;
+    font-family: "Fira Code", monospace;
+  }
+}
+
+@media (max-width: 600px) {
+  footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    > div {
+      padding: 0;
+      align-items: flex-start;
+
+      > div {
+        margin-left: 15px;
+      }
+
+      > p {
+        display: none;
+      }
+
+      > nav {
+        margin-right: 15px;
+        align-self: unset;
+      }
+    }
+
+    > p {
+      display: unset;
+      padding: 35px 0;
+      text-align: center;
     }
   }
 }

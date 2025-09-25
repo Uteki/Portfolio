@@ -20,6 +20,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
   currentLang: string;
+  menuOpen = false;
   isTermRoute = false;
 
   constructor(private scrollService: ScrollService, public translate: TranslateService, private router: Router,@Inject(PLATFORM_ID) private platformId: Object) {
@@ -47,6 +48,16 @@ export class HeaderComponent implements OnInit {
       localStorage.setItem('lang', lang);
       this.translate.use(lang);
     }
+  }
+
+  openMenu() {
+    this.menuOpen = !this.menuOpen;
+    document.body.classList.add('no-scroll');
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
+    document.body.classList.remove('no-scroll');
   }
 
   goToMe() {

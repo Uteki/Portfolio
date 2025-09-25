@@ -83,6 +83,11 @@ body.terms-privacy app-root {
   display: none;
 }
 
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
 .highlight {
   color: white;
 }
