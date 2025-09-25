@@ -1,10 +1,20 @@
 @use "colors" as *;
 
 section {
-  padding-top: 200px;
+  padding-top: 100px;
 
   > div {
     > div {
+      > button {
+        display: none;
+
+        &:hover {
+          svg path {
+            fill: $green-hundred;
+          }
+        }
+      }
+
       > h2 {
         font-family: "Fira Code", monospace !important;
         text-align: center;
@@ -29,6 +39,34 @@ section {
 
       .highlight {
         color: white;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    > div {
+      > div {
+        > button {
+          display: unset;
+        }
+
+        > h2 {
+          color: white;
+          text-align: left;
+          font-size: 32px;
+        }
+
+        > h3 {
+          font-size: 23px;
+          line-height: 120%;
+        }
+
+        > p {
+          font-size: 19px;
+          line-height: 120%;
+        }
       }
     }
   }

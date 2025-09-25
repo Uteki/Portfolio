@@ -1,0 +1,21 @@
+section {
+  > div {
+    > div {
+      > h2 {
+        word-break: break-all;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    > div {
+      > div {
+        > h2 {
+          font-size: 48px;
+        }
+      }
+    }
+  }
+}
