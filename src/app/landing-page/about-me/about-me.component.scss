@@ -65,6 +65,7 @@ section {
             line-height: 100%;
             font-weight: 500;
             font-size: 24px;
+            margin: 20px 0;
           }
 
           > div {
@@ -155,4 +156,89 @@ figure figcaption::before {
 figure figcaption::after {
   bottom: 0.5rem;
   right: 0.75rem;
+}
+
+@media (max-width: 1410px) {
+  section {
+    > div {
+      > div {
+        height: unset;
+
+        > figure {
+          align-self: unset;
+          margin-bottom: 64px;
+        }
+
+        > article {
+          > div {
+            > div {
+              max-height: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  section {
+    > div {
+      > div {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  section {
+    > div {
+      > div {
+        justify-content: center;
+
+        > figure {
+          margin: 0 0 40px 0;
+        }
+
+        > article {
+          flex: 0 0 100%;
+          margin: 0;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    > div {
+      > div {
+
+        > figure {
+        }
+
+        > article {
+          > div {
+            > h2 {
+              font-size: 18px;
+            }
+
+            > div {
+              > h3 {
+                font-size: 56px;
+                line-height: 80%;
+                letter-spacing: -3%;
+              }
+
+              > p {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
