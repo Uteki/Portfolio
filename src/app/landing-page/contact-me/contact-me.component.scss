@@ -31,6 +31,7 @@ section {
           font-weight: 700;
           line-height: 100%;
           letter-spacing: -3%;
+          word-break: break-word;
         }
 
         > h4 {
@@ -257,5 +258,47 @@ section {
     left: 50%;
     opacity: 0;
     transform: translateX(-50%) translateY(-20px);
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    > div {
+      > div {
+        flex-direction: column;
+
+        > div {
+          margin: 0 0 20px 0;
+
+          > h2 {
+            font-size: 18px;
+          }
+
+          > h3 {
+            font-size: 56px;
+          }
+
+          > h4 {
+            font-size: 20px;
+          }
+
+          > p {
+            font-size: 16px;
+          }
+        }
+
+        > form {
+          margin: 0;
+
+          > label {
+            font-size: 20px;
+
+            > input, textarea {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 export interface ContactData {
   name: string;
@@ -11,7 +12,17 @@ export interface ContactData {
   providedIn: 'root'
 })
 export class ContactService {
-  private data: ContactData = { name: '', email: '', message: '', messageHeight: '22px' };
+  private data: ContactData;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    const isMobileWidth = isPlatformBrowser(this.platformId) && window.innerWidth <= 768;
+    this.data = {
+      name: '',
+      email: '',
+      message: '',
+      messageHeight: isMobileWidth ? '19px' : '22px'
+    };
+  }
 
   setData(data: Partial<ContactData>) {
     this.data = { ...this.data, ...data };
@@ -22,7 +33,12 @@ export class ContactService {
   }
 
   clearData() {
-    this.data = { name: '', email: '', message: '', messageHeight: '22px' };
+    const isMobileWidth = isPlatformBrowser(this.platformId) && window.innerWidth <= 768;
+    this.data = {
+      name: '',
+      email: '',
+      message: '',
+      messageHeight: isMobileWidth ? '19px' : '22px'
+    };
   }
 }
-
