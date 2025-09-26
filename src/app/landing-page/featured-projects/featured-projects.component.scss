@@ -24,6 +24,9 @@ section {
 
       > p {
         margin: 0;
+        font-size: 16px;
+        line-height: 120%;
+        text-align: justify;
       }
 
       > ul {
@@ -160,4 +163,85 @@ section {
 
 .da_bubble:hover::after {
   background: url("/assets/img/previews/da_bubble.png") no-repeat center/contain;
+}
+
+@media (max-width: 1400px) {
+  section {
+    > div > div > ul > li {
+      max-width: 70%;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .project {
+    &:first-child {
+      &::before {
+        top: unset;
+      }
+
+      &::after {
+        top: unset;
+      }
+    }
+
+    &:last-child {
+      &::before {
+        bottom: unset;
+      }
+
+      &::after {
+        bottom: unset;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    > div {
+      > div {
+        > h2 {
+          font-size: 18px;
+        }
+
+        > h3 {
+          font-size: 56px;
+          word-break: break-word;
+        }
+
+        > ul {
+          > li {
+            max-width: 100%;
+
+            &:before {
+              display: none;
+            }
+
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    > div {
+      > div {
+        > ul {
+          > li {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 32px 0;
+          }
+        }
+      }
+    }
+  }
 }
