@@ -93,16 +93,16 @@ export class FeaturedProjectsComponent implements OnInit {
       descriptionKey: 'PORTFOLIO.PROJECTS.SHARKIE_DESC',
       description: ''
     },
-    {
-      name: 'DA Bubble',
-      tech: ['Angular', 'TypeScript', 'Firebase'],
-      live: 'https://daniel-tran.com/da-bubble',
-      frame: 'assets/img/previews/da_bubble.png',
-      github: 'https://github.com/Uteki/da-bubble',
-      preview: 'da_bubble',
-      descriptionKey: 'PORTFOLIO.PROJECTS.DA_BUBBLE_DESC',
-      description: ''
-    }
+    // {
+    //   name: 'DA Bubble',
+    //   tech: ['Angular', 'TypeScript', 'Firebase'],
+    //   live: 'https://daniel-tran.com/da-bubble',
+    //   frame: 'assets/img/previews/da_bubble.png',
+    //   github: 'https://github.com/Uteki/da-bubble',
+    //   preview: 'da_bubble',
+    //   descriptionKey: 'PORTFOLIO.PROJECTS.DA_BUBBLE_DESC',
+    //   description: ''
+    // }
   ];
 
   /**
