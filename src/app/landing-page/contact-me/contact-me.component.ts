@@ -141,12 +141,9 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
    */
   private loadTranslations(): void {
     const keys: string[] = [
-      'CONTACT.NAME_PLACEHOLDER',
-      'CONTACT.EMAIL_PLACEHOLDER',
-      'CONTACT.MESSAGE_PLACEHOLDER',
-      'CONTACT.NAME_ERROR',
-      'CONTACT.EMAIL_ERROR',
-      'CONTACT.MESSAGE_ERROR',
+      'CONTACT.NAME_PLACEHOLDER', 'CONTACT.EMAIL_PLACEHOLDER',
+      'CONTACT.MESSAGE_PLACEHOLDER', 'CONTACT.NAME_ERROR',
+      'CONTACT.EMAIL_ERROR', 'CONTACT.MESSAGE_ERROR',
       'CONTACT.TERMS_ERROR'
     ];
     this.translate.get(keys).subscribe(translations => {
@@ -161,15 +158,12 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
    */
   private setTranslationData(translations: Record<string, string>): void {
     this.placeholders = {
-      name: translations['CONTACT.NAME_PLACEHOLDER'],
-      email: translations['CONTACT.EMAIL_PLACEHOLDER'],
+      name: translations['CONTACT.NAME_PLACEHOLDER'], email: translations['CONTACT.EMAIL_PLACEHOLDER'],
       message: translations['CONTACT.MESSAGE_PLACEHOLDER']
     };
     this.errors = {
-      name: translations['CONTACT.NAME_ERROR'],
-      email: translations['CONTACT.EMAIL_ERROR'],
-      message: translations['CONTACT.MESSAGE_ERROR'],
-      checkbox: translations['CONTACT.TERMS_ERROR']
+      name: translations['CONTACT.NAME_ERROR'], email: translations['CONTACT.EMAIL_ERROR'],
+      message: translations['CONTACT.MESSAGE_ERROR'], checkbox: translations['CONTACT.TERMS_ERROR']
     };
   }
 
@@ -295,7 +289,7 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
    * @param ngForm - NgForm instance
    */
   successfulSend(ngForm: NgForm): void {
-    this.thx = this.contactData.name.toLowerCase().replace(/\b\w/g, char => char.toUpperCase());
+    this.thx = this.toTitleCase(this.contactData?.name ?? '');
     this.contactService.clearData(); this.clearButtonAnimation(); ngForm.resetForm()
     this.successMessageVisible = true;
     this.successMessageHide = false;
@@ -305,6 +299,15 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
       this.successMessageHide = true;
       setTimeout(() => (this.successMessageVisible = false), 500);
     }, 3000);
+  }
+
+  /**
+   * Converts a string into title case while being locale-aware for German (de-DE).
+   * @param input - The string to convert (e.g., a name).
+   * @returns The transformed string in title case.
+   */
+  toTitleCase(input: string): string {
+    return input.toLocaleLowerCase('de-DE').replace(/(^|\s|-|')\p{L}/gu, m => m.toLocaleUpperCase('de-DE'));
   }
 
   /**
