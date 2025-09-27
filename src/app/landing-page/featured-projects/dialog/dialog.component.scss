@@ -216,6 +216,16 @@
   }
 }
 
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+* {
+  margin-right: 2px;
+  scrollbar-width: thin;
+  scrollbar-color: #00b3ad transparent;
+}
+
 @media (max-width: 1450px) {
   .dialog-wrapper {
     .dialog-content {
