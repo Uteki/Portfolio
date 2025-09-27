@@ -66,7 +66,7 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
   showCheckboxError: boolean = false;
 
   /** Testing flag for email sending simulation */
-  mailTest: boolean = true;
+  mailTest: boolean = false;
 
   /** Placeholders for form inputs */
   placeholders: any = {};
@@ -295,7 +295,7 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
    * @param ngForm - NgForm instance
    */
   successfulSend(ngForm: NgForm): void {
-    this.thx = this.contactData.name;
+    this.thx = this.contactData.name.toLowerCase().replace(/\b\w/g, char => char.toUpperCase());
     this.contactService.clearData(); this.clearButtonAnimation(); ngForm.resetForm()
     this.successMessageVisible = true;
     this.successMessageHide = false;
