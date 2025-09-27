@@ -5,6 +5,19 @@ import {RouterLink} from "@angular/router";
 import {ScrollService} from "../../scroll.service";
 import {TranslatePipe, TranslateService} from "@ngx-translate/core";
 
+/** Represents a single technical skill */
+interface Skill {
+  name: string;
+  icon: string;
+}
+
+/** Represents a growth mindset skill with associated learning skills */
+interface GrowthSkill {
+  name: string;
+  icon: string;
+  learning: Skill[];
+}
+
 @Component({
   selector: 'app-skill-set',
   standalone: true,
@@ -16,8 +29,23 @@ import {TranslatePipe, TranslateService} from "@ngx-translate/core";
   templateUrl: './skill-set.component.html',
   styleUrl: './skill-set.component.scss'
 })
+/**
+ * SkillSetComponent
+ *
+ * Standalone Angular component that displays the user's technical skills
+ * and growth mindset skills.
+ *
+ * Features:
+ * - Displays a list of main technical skills with icons
+ * - Shows growth/learning skills dynamically
+ * - Supports hover animations via AnimationService
+ * - Smooth scrolls to contact section using ScrollService
+ * - Updates "Growth mindset" label based on current language
+ */
 export class SkillSetComponent implements OnInit {
-  skills = [
+
+  /** List of main technical skills with icons */
+  skills: Skill[] = [
     { name: 'HTML', icon: 'assets/img/icons/skills/html.svg' },
     { name: 'CSS', icon: 'assets/img/icons/skills/css.svg' },
     { name: 'JavaScript', icon: 'assets/img/icons/skills/javascript.svg' },
@@ -38,7 +66,8 @@ export class SkillSetComponent implements OnInit {
     { name: 'Wordpress', icon: 'assets/img/icons/skills/wordpress.svg' }
   ];
 
-  growth = {
+  /** Growth mindset skill and its associated learning skills */
+  growth: GrowthSkill = {
     name: 'Growth mindset',
     icon: 'assets/img/icons/skills/growth.svg',
     learning: [
@@ -48,37 +77,66 @@ export class SkillSetComponent implements OnInit {
     ]
   };
 
+  /**
+   * Creates an instance of SkillSetComponent.
+   *
+   * @param animationService - Handles hover/animation effects on skill buttons
+   * @param scrollService - Provides smooth scrolling to page sections
+   * @param translate - Handles translation and language changes
+   */
   constructor(
     private animationService: AnimationService,
     private scrollService: ScrollService,
     private translate: TranslateService
   ) {}
 
-  ngOnInit() {
+  /**
+   * Lifecycle hook called after component initialization.
+   *
+   * - Loads translated "Growth mindset" label
+   * - Subscribes to language changes to update the label dynamically
+   */
+  ngOnInit(): void {
     this.loadGrowthName();
 
-    this.translate.onLangChange.subscribe(() => {
+    this.translate.onLangChange.subscribe((): void => {
       this.loadGrowthName();
     });
   }
 
-  loadGrowthName() {
+  /**
+   * Loads the translated "Growth mindset" label and updates the `growth.name` property.
+   */
+  loadGrowthName(): void {
     this.translate.get('SKILLS.MINDSET').subscribe(translated => {
       this.growth.name = translated;
     });
   }
 
-  onHover(event: Event) {
+  /**
+   * Starts the marquee button animation on hover.
+   *
+   * @param event - The DOM hover event
+   */
+  onHover(event: Event): void {
     const target = event.currentTarget as HTMLElement;
     this.animationService.startMarqueeBtnAnimation(target);
   }
 
-  onHoverOut(event: Event) {
+  /**
+   * Returns the marquee button to its center position when hover ends.
+   *
+   * @param event - The DOM mouse leave event
+   */
+  onHoverOut(event: Event): void {
     const target = event.currentTarget as HTMLElement;
     this.animationService.returnMarqueeBtnToCenter(target);
   }
 
-  goToContact() {
+  /**
+   * Smoothly scrolls to the contact section of the page.
+   */
+  goToContact(): void {
     this.scrollService.scrollToFragment('contact', 200);
   }
 }

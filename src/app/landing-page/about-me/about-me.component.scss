@@ -121,28 +121,27 @@ section {
   }
 }
 
-//TODO - bonus stuff
 figure figcaption {
-  background: #0d1a1a;
-  border: 1px solid #00e0c6;
-  border-radius: 8px;
-  padding: 1rem 1.5rem;
-  margin-top: 1rem;
-  font-style: italic;
-  font-size: 0.95rem;
-  line-height: 1.5;
   color: #ddd;
+  margin-top: 1rem;
+  line-height: 1.5;
+  border-radius: 8px;
+  font-size: 0.95rem;
   position: relative;
+  font-style: italic;
+  background: #0d1a1a;
+  padding: 1rem 1.5rem;
+  border: 1px solid #00e0c6;
 }
 
 figure figcaption::before,
 figure figcaption::after {
   content: '"';
-  position: absolute;
-  font-size: 1.5rem;
-  color: #00e0c6;
   opacity: 0.7;
+  color: #00e0c6;
   font-weight: bold;
+  font-size: 1.5rem;
+  position: absolute;
 }
 
 figure figcaption::before {
@@ -212,10 +211,6 @@ figure figcaption::after {
   section {
     > div {
       > div {
-
-        > figure {
-        }
-
         > article {
           > div {
             > h2 {

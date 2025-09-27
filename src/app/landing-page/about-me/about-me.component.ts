@@ -12,10 +12,26 @@ import {TranslatePipe} from "@ngx-translate/core";
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'
 })
+/**
+ * AboutMeComponent
+ *
+ * Standalone Angular component representing the "About Me" section.
+ *
+ * Features:
+ * - Displays personal information and bio
+ * - Handles hover state for interactive UI elements (e.g., images or cards)
+ * - Uses NgOptimizedImage for optimized images
+ * - Supports translation via TranslatePipe
+ */
 export class AboutMeComponent {
-  hovered = false;
+  /** Tracks whether the interactive element is currently hovered */
+  hovered: boolean = false;
 
-  onHover() {
+  /**
+   * Sets the hover state to true.
+   * Can be bound to mouse enter events to trigger hover animations or styles.
+   */
+  onHover(): void {
     this.hovered = true;
   }
 }

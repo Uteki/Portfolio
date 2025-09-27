@@ -21,10 +21,37 @@ import {isPlatformBrowser} from "@angular/common";
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
+/**
+ * LandingPageComponent
+ *
+ * Standalone Angular component representing the main landing page of the application.
+ *
+ * Features:
+ * - Composes multiple sections as standalone components:
+ *   - AboveTheFoldComponent
+ *   - AboutMeComponent
+ *   - SkillSetComponent
+ *   - FeaturedProjectsComponent
+ *   - ColleaguesSayComponent
+ *   - ContactMeComponent
+ * - Ensures that global body styling is reset when viewing the landing page.
+ */
 export class LandingPageComponent implements OnInit{
+
+  /**
+   * Creates an instance of LandingPageComponent.
+   *
+   * @param platformId - Angular platform identifier (used to detect browser vs. server-side rendering)
+   */
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  ngOnInit() {
+  /**
+   * Lifecycle hook that runs after component initialization.
+   *
+   * If running in the browser, removes the `terms-privacy` class from the body
+   * to ensure landing page styles are applied correctly.
+   */
+  ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       document.body.classList.remove('terms-privacy');
     }
