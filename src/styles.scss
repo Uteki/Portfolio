@@ -88,6 +88,14 @@ body.terms-privacy app-root {
   height: 100dvh;
 }
 
+.logo-img {
+  transition: filter 0.3s ease;
+}
+
+.logo-img:hover {
+  filter: brightness(1.1) saturate(1.1) drop-shadow(0 0 0.5px #00b3ad);
+}
+
 .highlight {
   color: white;
 }

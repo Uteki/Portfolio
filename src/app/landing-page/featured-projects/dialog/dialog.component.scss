@@ -64,7 +64,7 @@
         }
 
         > p:last-child {
-          gap: 4px;
+          gap: 16px;
           display: flex;
           font-size: 16px;
           margin-top: 32px;
@@ -72,13 +72,19 @@
           line-height: 120%;
           align-items: center;
 
-          > img {
-            width: 24px;
-            height: 24px;
-            padding-left: 16px;
+          > span {
+            gap: 4px;
+            display: flex;
+            align-items: center;
 
-            &:first-child {
-              padding-left: 0;
+            > img {
+              width: 24px;
+              height: 24px;
+              padding-left: 16px;
+
+              &:first-child {
+                padding-left: 0;
+              }
             }
           }
         }
@@ -196,7 +202,6 @@
 ::ng-deep {
   .project-dialog .mat-mdc-dialog-surface {
     max-width: 1248px;
-    //max-height: 656px;
     border-radius: 30px;
     border: 1px solid $green-hundred;
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
@@ -208,5 +213,106 @@
 
   .mdc-button__ripple {
     display: none;
+  }
+}
+
+@media (max-width: 1450px) {
+  .dialog-wrapper {
+    .dialog-content {
+      > div:last-child {
+        > img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .dialog-wrapper {
+    .dialog-content {
+      gap: 40px;
+      display: flex;
+      padding: 0 80px;
+      overflow-y: auto;
+      max-height: 70vh;
+      flex-direction: column;
+
+      > div {
+        margin: 0 !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dialog-wrapper {
+    .upper-action {
+      padding: 25px 0 0 0;
+    }
+
+    .lower-action {
+      padding: 0 15px 25px 15px;
+    }
+
+    .dialog-content {
+      padding: 0 10px;
+
+      > div:first-child {
+        > h2 {
+          > span:first-child {
+            font-size: 72px;
+            line-height: 100%;
+          }
+
+          > span:last-child {
+            font-size: 56px;
+          }
+        }
+
+        > div {
+          > p:nth-child(1) {
+            font-size: 20px;
+          }
+
+          > p:nth-child(2) {
+            font-size: 16px;
+            height: unset;
+          }
+
+          > p:nth-child(3) {
+            flex-wrap: wrap;
+          }
+
+          &:last-child {
+            align-self: center;
+          }
+        }
+      }
+    }
+  }
+
+  .dialog-nav {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .dialog-wrapper {
+    .dialog-content {
+      > div:first-child {
+        > h2 {
+          word-break: break-word;
+        }
+
+        > div {
+          &:last-child {
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+          }
+        }
+      }
+    }
   }
 }
