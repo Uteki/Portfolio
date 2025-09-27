@@ -63,7 +63,7 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
   showCheckboxError: boolean = false;
 
   /** Testing flag for email sending simulation */
-  mailTest: boolean = true;
+  mailTest: boolean = false;
 
   /** Placeholders for form inputs */
   placeholders: any = {};
