@@ -18,14 +18,39 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+/**
+ * HeaderComponent
+ *
+ * Standalone Angular component responsible for rendering the application header.
+ *
+ * Features:
+ * - Displays navigation menu and language switcher
+ * - Tracks current route to handle page-specific logic (e.g., legal pages)
+ * - Smooth scrolls to sections using ScrollService
+ * - Supports internationalization via TranslateService
+ * - Manages menu open/close state and body scroll lock
+ */
 export class HeaderComponent implements OnInit {
+  /** Currently selected language */
   currentLang: string;
-  menuOpen = false;
-  isTermRoute = false;
 
+  /** Menu open/close state */
+  menuOpen: boolean = false;
+
+  /** True if the current route is a terms/legal page */
+  isTermRoute: boolean = false;
+
+  /**
+   * Creates an instance of HeaderComponent.
+   *
+   * @param scrollService - Service for smooth scrolling to page sections
+   * @param translate - Service for managing translations
+   * @param router - Angular Router for route tracking
+   * @param platformId - Platform identifier (browser or server) for SSR checks
+   */
   constructor(private scrollService: ScrollService, public translate: TranslateService, private router: Router,@Inject(PLATFORM_ID) private platformId: Object) {
     if (isPlatformBrowser(this.platformId)) {
-      const savedLang = localStorage.getItem('lang') || 'en';
+      const savedLang:string = localStorage.getItem('lang') || 'en';
       this.currentLang = savedLang;
       this.translate.use(savedLang);
     } else {
@@ -33,7 +58,12 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
+  /**
+   * Lifecycle hook that runs after component initialization.
+   *
+   * Subscribes to router events to update `isTermRoute` based on the current URL.
+   */
+  ngOnInit(): void {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(event => {
@@ -42,7 +72,12 @@ export class HeaderComponent implements OnInit {
       });
   }
 
-  switchLanguage(lang: string) {
+  /**
+   * Switches the current language and updates localStorage.
+   *
+   * @param lang - The language code to switch to (e.g., 'en', 'de')
+   */
+  switchLanguage(lang: string): void {
     if (isPlatformBrowser(this.platformId)) {
       this.currentLang = lang;
       localStorage.setItem('lang', lang);
@@ -50,25 +85,40 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  openMenu() {
+  /**
+   * Opens the mobile navigation menu and prevents body scroll.
+   */
+  openMenu(): void {
     this.menuOpen = !this.menuOpen;
     document.body.classList.add('no-scroll');
   }
 
-  closeMenu() {
+  /**
+   * Closes the mobile navigation menu and restores body scroll.
+   */
+  closeMenu(): void {
     this.menuOpen = false;
     document.body.classList.remove('no-scroll');
   }
 
-  goToMe() {
+  /**
+   * Scrolls smoothly to the "About Me" section.
+   */
+  goToMe(): void {
     this.scrollService.scrollToFragment('about', 100);
   }
 
-  goToSkills() {
+  /**
+   * Scrolls smoothly to the "Skills" section.
+   */
+  goToSkills(): void {
     this.scrollService.scrollToFragment('skills', 100);
   }
 
-  goToProjects() {
+  /**
+   * Scrolls smoothly to the "Projects" section.
+   */
+  goToProjects(): void {
     this.scrollService.scrollToFragment('projects', 100);
   }
 }
