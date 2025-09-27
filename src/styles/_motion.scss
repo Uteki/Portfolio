@@ -41,3 +41,9 @@
 @keyframes scrollLeft {
   to { left: -100%; }
 }
+
+@keyframes drawCheck {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

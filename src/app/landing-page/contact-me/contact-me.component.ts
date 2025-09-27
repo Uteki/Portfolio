@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, inject, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, inject, OnInit, ViewChild, Renderer2} from '@angular/core';
 import { FormsModule, NgForm } from "@angular/forms";
 import { AnimationService } from "../../animation.service";
 import { RouterLink } from "@angular/router";
@@ -55,6 +55,9 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
   /** Current message text */
   message: string = '';
 
+  /** Thanks */
+  thx: string = '';
+
   /** Controls visibility of the success message after sending */
   successMessageVisible: boolean = false;
   successMessageHide: boolean = false;
@@ -63,7 +66,7 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
   showCheckboxError: boolean = false;
 
   /** Testing flag for email sending simulation */
-  mailTest: boolean = false;
+  mailTest: boolean = true;
 
   /** Placeholders for form inputs */
   placeholders: any = {};
@@ -98,8 +101,9 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
   constructor(
     private animationService: AnimationService,
     private translate: TranslateService,
-    private contactService: ContactService
-  ) {}
+    private contactService: ContactService,
+    private renderer: Renderer2
+) {}
 
   /** Initializes translations and loads saved form data */
   ngOnInit(): void {
@@ -184,12 +188,17 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
    * @param isError - Whether to show the error state
    * @param errorClass - CSS class for error styling
    */
-  private updateField(field: { control: string; input: any; default: string; error: string }, isError: boolean, errorClass: string): void {
+  private updateField(field: { control: string; input: any; default: string; error: string; type?: string }, isError: boolean, errorClass: string): void {
     const el = field.input.nativeElement;
-    el.placeholder = isError ? field.error : field.default;
-    el.classList.toggle(errorClass, isError);
 
-    if (isError && field.control === 'email') el.value = '';
+    if (field.type !== 'checkbox') {
+      el.placeholder = isError ? field.error : field.default;
+      el.classList.toggle(errorClass, isError);
+
+      if (isError && field.control === 'email') el.value = '';
+    } else {
+      this.showCheckboxError = isError;
+    }
   }
 
   /**
@@ -225,6 +234,24 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
       span.style.animation = 'none';
       setTimeout((): string => span.style.animation = '', 0);
     }
+  }
+
+  /**
+   * Plays the "success" animation on the element with the ID 'check'.
+   *
+   * This method first removes the 'animate' class from the element,
+   * forces a reflow to restart the animation, and then re-adds
+   * the 'animate' class. If the element is not found, the method
+   * does nothing.
+   *
+   * @private
+   */
+  private playSuccess(): void {
+    const check: Element | null = document.querySelector('#check');
+    if (!check) return;
+    this.renderer.removeClass(check, 'animate');
+    void (check as HTMLElement).offsetWidth;
+    this.renderer.addClass(check, 'animate');
   }
 
   /**
@@ -268,17 +295,15 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
    * @param ngForm - NgForm instance
    */
   successfulSend(ngForm: NgForm): void {
+    this.thx = this.contactData.name;
     this.contactService.clearData(); this.clearButtonAnimation(); ngForm.resetForm()
-
     this.successMessageVisible = true;
     this.successMessageHide = false;
 
+    setTimeout(() => this.playSuccess(), 250);
     setTimeout(() => {
       this.successMessageHide = true;
-
-      setTimeout(() => {
-        this.successMessageVisible = false;
-      }, 500);
+      setTimeout(() => (this.successMessageVisible = false), 500);
     }, 3000);
   }
 
