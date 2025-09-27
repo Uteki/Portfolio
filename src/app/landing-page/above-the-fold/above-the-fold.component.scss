@@ -108,6 +108,7 @@ section {
 
         &:first-child {
           transform: rotate(90deg) translateX(-60%);
+          white-space: nowrap;
 
           &:hover {
             color: $green-hundred;
