@@ -66,7 +66,7 @@ export class FeaturedProjectsComponent implements OnInit {
     {
       name: 'Pok-Dex',
       tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-      live: 'https://daniel-tran.com/pok-dex',
+      live: 'https://pok-dex.daniel-tran.com',
       frame: 'assets/img/previews/pok-dex.png',
       github: 'https://github.com/Uteki/Pok-Dex',
       preview: 'pok-dex',
@@ -76,7 +76,7 @@ export class FeaturedProjectsComponent implements OnInit {
     {
       name: 'Join',
       tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
-      live: 'https://daniel-tran.com/join',
+      live: 'https://join.daniel-tran.com',
       frame: 'assets/img/previews/join.png',
       github: 'https://github.com/Uteki/Join',
       preview: 'join',
@@ -86,7 +86,7 @@ export class FeaturedProjectsComponent implements OnInit {
     {
       name: 'Sharkie',
       tech: ['HTML', 'CSS', 'JavaScript'],
-      live: 'https://daniel-tran.com/sharkie',
+      live: 'https://sharkie.daniel-tran.com',
       frame: 'assets/img/previews/sharkie.png',
       github: 'https://github.com/Uteki/Sharkie',
       preview: 'sharkie',
@@ -96,7 +96,7 @@ export class FeaturedProjectsComponent implements OnInit {
     // {
     //   name: 'DA Bubble',
     //   tech: ['Angular', 'TypeScript', 'Firebase'],
-    //   live: 'https://daniel-tran.com/da-bubble',
+    //   live: 'https://da-bubble.daniel-tran.com',
     //   frame: 'assets/img/previews/da_bubble.png',
     //   github: 'https://github.com/Uteki/da-bubble',
     //   preview: 'da_bubble',
