@@ -44,7 +44,7 @@ $Portfolio-theme: mat.define-light-theme((
 @import "styles/fonts";
 
 html, body { height: 100%; }
-body { margin: 0; overflow-x: hidden; }
+body { margin: 0; }
 input, textarea { all: unset; }
 
 input:-webkit-autofill,
@@ -63,6 +63,10 @@ body.terms-privacy app-root {
   display: flex;
   flex-direction: column;
   background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+}
+
+#about, #skills {
+  overflow: hidden;
 }
 
 .max-wrapper {
