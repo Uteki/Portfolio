@@ -74,6 +74,9 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
   /** Error messages for form inputs */
   errors: any = {};
 
+  /** Error handler placeholder */
+  fieldValues: { [key: string]: string } = {};
+
   /** Data object bound to the contact form */
   contactData = {
     name: "",
@@ -184,15 +187,18 @@ export class ContactMeComponent implements OnInit, AfterViewInit {
    */
   private updateField(field: { control: string; input: any; default: string; error: string; type?: string }, isError: boolean, errorClass: string): void {
     const el = field.input.nativeElement;
-
     if (field.type !== 'checkbox') {
+      if (isError && !(field.control in this.fieldValues)) {
+        this.fieldValues[field.control] = el.value;
+        el.value = '';
+      }
+      if (!isError && field.control in this.fieldValues) {
+        el.value = this.fieldValues[field.control];
+        delete this.fieldValues[field.control];
+      }
       el.placeholder = isError ? field.error : field.default;
       el.classList.toggle(errorClass, isError);
-
-      if (isError && field.control === 'email') el.value = '';
-    } else {
-      this.showCheckboxError = isError;
-    }
+    } else { this.showCheckboxError = isError }
   }
 
   /**
