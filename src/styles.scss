@@ -44,7 +44,7 @@ $Portfolio-theme: mat.define-light-theme((
 @import "styles/fonts";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; overflow-x: hidden; }
 input, textarea { all: unset; }
 
 input:-webkit-autofill,

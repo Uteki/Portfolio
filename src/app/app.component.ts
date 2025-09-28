@@ -1,5 +1,5 @@
-import {AfterViewInit, Component} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {AfterViewInit, Component, Inject, PLATFORM_ID} from '@angular/core';
+import {CommonModule, isPlatformBrowser} from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 import {HeaderComponent} from "./shared/header/header.component";
@@ -18,9 +18,11 @@ import 'aos/dist/aos.css';
 export class AppComponent implements AfterViewInit {
   title = 'Portfolio';
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   ngAfterViewInit() {
-    AOS.init({
-      once: true
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({ duration: 800, once: true });
+    }
   }
 }
