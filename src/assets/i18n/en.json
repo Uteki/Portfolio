@@ -42,6 +42,7 @@
   "PORTFOLIO" : {
     "FEATURED": "Featured Projects",
     "EXPLORE": "Explore a selection of my work here - Interact with <br> projects to see my skills in action.",
+    "ARIA": "View details of",
     "DIALOG": {
       "ABOUT": "What is this project about?",
       "PREVIOUS": "Previous",

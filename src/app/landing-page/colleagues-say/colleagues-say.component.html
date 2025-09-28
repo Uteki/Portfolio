@@ -1,7 +1,7 @@
 <section >
   <div class="max-wrapper">
     <div>
-      <h2>{{ 'COLLEAGUES.SAY' | translate }}</h2>
+      <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">{{ 'COLLEAGUES.SAY' | translate }}</h2>
 
       <swiper-container #swiper
         slides-per-view="auto"
@@ -15,35 +15,35 @@
         autoplay-pause-on-mouse-enter="true">
 
         <swiper-slide>
-          <div class="testimonial-card">
+          <div class="testimonial-card" [attr.aria-label]="'Testimonial ' + ('COLLEAGUES.COL_1' | translate)">
             <blockquote>{{ 'COLLEAGUES.COL_1_TEXT' | translate }}</blockquote>
             <footer>{{ 'COLLEAGUES.COL_1' | translate }}</footer>
           </div>
         </swiper-slide>
 
         <swiper-slide>
-          <div class="testimonial-card">
+          <div class="testimonial-card" [attr.aria-label]="'Testimonial ' + ('COLLEAGUES.COL_2' | translate)">
             <blockquote>{{ 'COLLEAGUES.COL_2_TEXT' | translate }}</blockquote>
             <footer>{{ 'COLLEAGUES.COL_2' | translate }}</footer>
           </div>
         </swiper-slide>
 
         <swiper-slide>
-          <div class="testimonial-card">
+          <div class="testimonial-card" [attr.aria-label]="'Testimonial ' + ('COLLEAGUES.COL_3' | translate)">
             <blockquote>{{ 'COLLEAGUES.COL_3_TEXT' | translate }}</blockquote>
             <footer>{{ 'COLLEAGUES.COL_3' | translate }}</footer>
           </div>
         </swiper-slide>
 
         <swiper-slide>
-          <div class="testimonial-card">
+          <div class="testimonial-card" [attr.aria-label]="'Testimonial ' + ('COLLEAGUES.COL_4' | translate)">
             <blockquote>{{ 'COLLEAGUES.COL_4_TEXT' | translate }}</blockquote>
             <footer>{{ 'COLLEAGUES.COL_4' | translate }}</footer>
           </div>
         </swiper-slide>
 
         <swiper-slide>
-          <div class="testimonial-card">
+          <div class="testimonial-card" [attr.aria-label]="'Testimonial ' + ('COLLEAGUES.COL_5' | translate)">
             <blockquote>{{ 'COLLEAGUES.COL_5_TEXT' | translate }}</blockquote>
             <footer>{{ 'COLLEAGUES.COL_5' | translate }}</footer>
           </div>

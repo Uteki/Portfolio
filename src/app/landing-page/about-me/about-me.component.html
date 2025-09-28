@@ -1,30 +1,41 @@
-<section id="about">
+<section id="about" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
   <div class="max-wrapper">
     <div>
-        <figure [class.hovered]="hovered" (mouseenter)="onHover()">
-          <img ngSrc="../../../assets/img/photos/danie-profile.jpg" alt="Daniel Tran" height="1600" width="1600" priority>
+      <figure [class.hovered]="hovered" (mouseenter)="onHover()"
+              data-aos="fade-right"
+              data-aos-duration="800"
+              data-aos-delay="100"
+              data-aos-easing="ease-in-out"
+              data-aos-offset="150">
+        <img ngSrc="../../../assets/img/photos/danie-profile.jpg" alt="Daniel Tran" height="1600" width="1600" priority>
 
-          <figcaption class="d-none">
-            Outside of development, I’m a passionate breakdancer. The discipline, creativity, and drive to constantly refine my skills in dance inspire how I approach coding and problem-solving in my projects.
-          </figcaption>
-        </figure>
+        <figcaption class="d-none">
+          Outside of development, I’m a passionate breakdancer. The discipline, creativity, and drive to constantly refine my skills in dance inspire how I approach coding and problem-solving in my projects.
+        </figcaption>
+      </figure>
 
-        <article>
+      <article data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+        <div>
+          <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">{{ 'ABOUT.WHO' | translate }}</h2>
           <div>
-            <h2>{{ 'ABOUT.WHO' | translate }}</h2>
-            <div>
-              <h3>{{ 'ABOUT.ABOUT' | translate }}</h3>
+            <h3 data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">{{ 'ABOUT.ABOUT' | translate }}</h3>
 
-              <p>
-                {{ 'ABOUT.ME' | translate }}
-              </p>
+            <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+              {{ 'ABOUT.ME' | translate }}
+            </p>
 
-              <p class="highlight"><span><img src="assets/img/icons/location_on.svg"></span>{{ 'ABOUT.LOCATION' | translate }}</p>
-              <p class="highlight"><span><img src="assets/img/icons/new_releases.svg"></span>{{ 'ABOUT.UP_2_DATE' | translate }}</p>
-              <p class="highlight"><span><img src="assets/img/icons/cognition.svg"></span>{{ 'ABOUT.COGNITION' | translate }}</p>
-            </div>
+            <p class="highlight" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+              <span><img src="assets/img/icons/location_on.svg"></span>{{ 'ABOUT.LOCATION' | translate }}
+            </p>
+            <p class="highlight" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+              <span><img src="assets/img/icons/new_releases.svg"></span>{{ 'ABOUT.UP_2_DATE' | translate }}
+            </p>
+            <p class="highlight" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
+              <span><img src="assets/img/icons/cognition.svg"></span>{{ 'ABOUT.COGNITION' | translate }}
+            </p>
           </div>
-        </article>
+        </div>
+      </article>
     </div>
   </div>
 </section>

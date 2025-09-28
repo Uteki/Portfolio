@@ -1,17 +1,16 @@
-<section id="contact">
+<section id="contact" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
   <div class="max-wrapper">
     <div>
       <div>
-        <h2>{{ 'CONTACT.CONTACT' | translate }}</h2>
-        <h3>{{ 'CONTACT.TOGETHER' | translate }}</h3>
+        <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">{{ 'CONTACT.CONTACT' | translate }}</h2>
+        <h3 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">{{ 'CONTACT.TOGETHER' | translate }}</h3>
+        <h4 data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">{{ 'CONTACT.PROBLEM' | translate }}</h4>
 
-        <h4>{{ 'CONTACT.PROBLEM' | translate }}</h4>
-
-        <p>
+        <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
           {{ 'CONTACT.INFO' | translate }}
         </p>
 
-        <p>
+        <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
           {{ 'CONTACT.IN_NEED' | translate }} <span>{{ 'CONTACT.TALK' | translate }}</span> <br> {{ 'CONTACT.VALUE' | translate }}
         </p>
       </div>
@@ -19,7 +18,7 @@
       <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
         <label>
           {{ 'CONTACT.YOUR_NAME' | translate }}
-          <input [(ngModel)]="contactData.name" #name="ngModel" #nameInput type="text" name="name" placeholder="{{ 'CONTACT.NAME_PLACEHOLDER' | translate }}" ngModel required (input)="onInputChange()">
+          <input [(ngModel)]="contactData.name" #name="ngModel" #nameInput type="text" name="name" placeholder="{{ 'CONTACT.NAME_PLACEHOLDER' | translate }}" ngModel required aria-required="true" (input)="onInputChange()">
         </label>
 
         <label
@@ -28,16 +27,16 @@
           (touchstart)="hoverMiddle(true)"
           (touchend)="hoverMiddle(false)">
           {{ 'CONTACT.YOUR_EMAIL' | translate }}
-          <input [(ngModel)]="contactData.email" #email="ngModel" #emailInput type="email" name="email" placeholder="{{ 'CONTACT.EMAIL_PLACEHOLDER' | translate }}" ngModel required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" (input)="onInputChange()">
+          <input [(ngModel)]="contactData.email" #email="ngModel" #emailInput type="email" name="email" placeholder="{{ 'CONTACT.EMAIL_PLACEHOLDER' | translate }}" ngModel required aria-required="true" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" (input)="onInputChange()">
         </label>
 
         <label>
           {{ 'CONTACT.MESSAGE' | translate }}
-          <textarea [(ngModel)]="contactData.message" #message="ngModel" #messageInput name="message" maxlength="800" placeholder="{{ 'CONTACT.MESSAGE_PLACEHOLDER' | translate }}" ngModel required (input)="autoGrow($event); onMessageChange($event)"></textarea>
+          <textarea [(ngModel)]="contactData.message" #message="ngModel" #messageInput name="message" maxlength="800" placeholder="{{ 'CONTACT.MESSAGE_PLACEHOLDER' | translate }}" ngModel required aria-required="true" (input)="autoGrow($event); onMessageChange($event)"></textarea>
         </label>
 
         <label class="custom-checkbox" (click)="clearCheckboxError()">
-          <input #checkbox="ngModel" #subscribeInput type="checkbox" name="subscribe" id="subscribe" ngModel required (change)="onInputChange()">
+          <input #checkbox="ngModel" #subscribeInput type="checkbox" name="subscribe" id="subscribe" ngModel required aria-required="true" (change)="onInputChange()">
 
           <span [class.error]="showCheckboxError">
             {{ 'CONTACT.CHECKBOX_1' | translate }} <a [routerLink]="['/privacy-policy']" (click)="scrollToTop()">{{ 'CONTACT.PRIVACY_POLICY' | translate }}</a>

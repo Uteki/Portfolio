@@ -1,19 +1,21 @@
-<section id="skills">
+<section id="skills" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
   <div class="max-wrapper">
     <div>
-      <article>
+      <article data-aos="fade-right" data-aos-duration="900" data-aos-delay="200">
         <div>
-          <h2>{{ 'SKILLS.TECH' | translate }}</h2>
+          <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="250">{{ 'SKILLS.TECH' | translate }}</h2>
 
           <div>
-            <h3>{{ 'SKILLS.SET' | translate }}</h3>
-            <p>
+            <h3 data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">{{ 'SKILLS.SET' | translate }}</h3>
+            <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
               {{ 'SKILLS.INFO' | translate }}
             </p>
 
             <div>
-              <h4>{{ 'SKILLS.ANOTHER' | translate }} <span>{{ 'SKILLS.SKILL' | translate }}</span></h4>
-              <p>
+              <h4 data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                {{ 'SKILLS.ANOTHER' | translate }} <span>{{ 'SKILLS.SKILL' | translate }}</span>
+              </h4>
+              <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
                 {{ 'SKILLS.CONTACT' | translate }}
               </p>
             </div>
@@ -32,14 +34,19 @@
       </article>
 
       <div>
-        <div *ngFor="let skill of skills">
+        <div *ngFor="let skill of skills; let i = index"
+             data-aos="fade-left"
+             [attr.data-aos-delay]="i * 50 + 900"
+             data-aos-duration="600">
           <figure>
             <img [src]="skill.icon" [alt]="skill.name">
             <figcaption [innerHTML]="skill.name"></figcaption>
           </figure>
         </div>
 
-        <div>
+        <div data-aos="fade-left"
+             [attr.data-aos-delay]="skills.length * 50 + 1100"
+             data-aos-duration="600">
           <figure class="tooltip">
             <img [src]="growth.icon" [alt]="growth.name">
             <figcaption [innerHTML]="growth.name"></figcaption>
@@ -47,7 +54,10 @@
             <div class="tooltip-content">
               <p>{{ 'SKILLS.INTERESTS' | translate }} !</p>
               <div>
-                <figure *ngFor="let learn of growth.learning">
+                <figure *ngFor="let learn of growth.learning; let j = index"
+                        data-aos="fade-up"
+                        [attr.data-aos-delay]="j * 50"
+                        data-aos-duration="600">
                   <img [src]="learn.icon" [alt]="learn.name" width="30">
                   <figcaption>{{ learn.name }}</figcaption>
                 </figure>

@@ -64,11 +64,14 @@ export class HeaderComponent implements OnInit {
    * Subscribes to router events to update `isTermRoute` based on the current URL.
    */
   ngOnInit(): void {
+    const termRoutes = ['/legal-notice', '/privacy-policy'];
+
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(event => {
         const navEnd = event as NavigationEnd;
-        this.isTermRoute = navEnd.urlAfterRedirects.includes('/legal-notice');
+        const url = navEnd.urlAfterRedirects;
+        this.isTermRoute = termRoutes.some(route => url.includes(route));
       });
   }
 
@@ -105,20 +108,20 @@ export class HeaderComponent implements OnInit {
    * Scrolls smoothly to the "About Me" section.
    */
   goToMe(): void {
-    this.scrollService.scrollToFragment('about', 100);
+    this.scrollService.scrollToFragment('about', 150);
   }
 
   /**
    * Scrolls smoothly to the "Skills" section.
    */
   goToSkills(): void {
-    this.scrollService.scrollToFragment('skills', 100);
+    this.scrollService.scrollToFragment('skills', 150);
   }
 
   /**
    * Scrolls smoothly to the "Projects" section.
    */
   goToProjects(): void {
-    this.scrollService.scrollToFragment('projects', 100);
+    this.scrollService.scrollToFragment('projects', 150);
   }
 }

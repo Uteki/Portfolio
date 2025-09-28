@@ -1,14 +1,14 @@
-<section id="projects">
+<section id="projects" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
   <div class="max-wrapper">
     <div>
-      <h2>Portfolio</h2>
-      <h3>{{ 'PORTFOLIO.FEATURED' | translate }}</h3>
-      <p [innerHTML]="'PORTFOLIO.EXPLORE' | translate"></p>
+      <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Portfolio</h2>
+      <h3 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">{{ 'PORTFOLIO.FEATURED' | translate }}</h3>
+      <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" [innerHTML]="'PORTFOLIO.EXPLORE' | translate"></p>
 
       <ul>
-        <li *ngFor="let project of projects; let i = index" [ngClass]="project.preview" class="project" (click)="openDialog(i)">
-          <h4>{{ project.name }}</h4>
-          <p>
+        <li *ngFor="let project of projects; let i = index" [ngClass]="project.preview" [attr.aria-label]="('PORTFOLIO.ARIA' | translate) + ' ' + project.name" class="project" (click)="openDialog(i)">
+          <h4 data-aos="fade-right" data-aos-duration="600" [attr.data-aos-delay]="i * 150 + 400">{{ project.name }}</h4>
+          <p data-aos="fade-right" data-aos-duration="600" [attr.data-aos-delay]="i * 150 + 500">
             <ng-container *ngFor="let tech of project.tech; let last = last">
               <ng-container [ngSwitch]="tech">
                 <abbr *ngSwitchCase="'HTML'">HTML</abbr>
