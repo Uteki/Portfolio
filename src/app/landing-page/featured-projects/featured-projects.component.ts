@@ -63,16 +63,16 @@ export class FeaturedProjectsComponent implements OnInit {
 
   /** List of featured projects to display in the component */
   projects: Project[] = [
-    {
-      name: 'Pok-Dex',
-      tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-      live: 'https://pok-dex.daniel-tran.com',
-      frame: 'assets/img/previews/pok-dex.png',
-      github: 'https://github.com/Uteki/Pok-Dex',
-      preview: 'pok-dex',
-      descriptionKey: 'PORTFOLIO.PROJECTS.POK_DEX_DESC',
-      description: ''
-    },
+    // {
+    //   name: 'Pok-Dex',
+    //   tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+    //   live: 'https://pok-dex.daniel-tran.com',
+    //   frame: 'assets/img/previews/pok-dex.png',
+    //   github: 'https://github.com/Uteki/Pok-Dex',
+    //   preview: 'pok-dex',
+    //   descriptionKey: 'PORTFOLIO.PROJECTS.POK_DEX_DESC',
+    //   description: ''
+    // },
     {
       name: 'Join',
       tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
@@ -93,16 +93,16 @@ export class FeaturedProjectsComponent implements OnInit {
       descriptionKey: 'PORTFOLIO.PROJECTS.SHARKIE_DESC',
       description: ''
     },
-    // {
-    //   name: 'DA Bubble',
-    //   tech: ['Angular', 'TypeScript', 'Firebase'],
-    //   live: 'https://da-bubble.daniel-tran.com',
-    //   frame: 'assets/img/previews/da_bubble.png',
-    //   github: 'https://github.com/Uteki/da-bubble',
-    //   preview: 'da_bubble',
-    //   descriptionKey: 'PORTFOLIO.PROJECTS.DA_BUBBLE_DESC',
-    //   description: ''
-    // }
+    {
+      name: 'DA Bubble',
+      tech: ['Angular', 'TypeScript', 'Firebase'],
+      live: 'https://bubble.daniel-tran.com',
+      frame: 'assets/img/previews/da_bubble.png',
+      github: 'https://github.com/Uteki/DABubble',
+      preview: 'da_bubble',
+      descriptionKey: 'PORTFOLIO.PROJECTS.DA_BUBBLE_DESC',
+      description: ''
+    }
   ];
 
   /**
