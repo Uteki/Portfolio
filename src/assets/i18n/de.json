@@ -7,12 +7,12 @@
   },
 
   "ABOVE": {
-    "DEVELOPER": "Frontend Entwickler",
+    "DEVELOPER": "Full-Stack Entwickler",
     "CHECK": "Was ich tue",
     "CONTACT": "Meld dich",
     "MARQUEE": {
       "AVAILABLE_REMOTE": "Verfügbar für Remote-Arbeit",
-      "FRONTEND_DEV": "Frontend Entwickler",
+      "FRONTEND_DEV": "Full-Stack Entwickler",
       "BASED_IN": "Basierend in München",
       "OPEN_TO_WORK": "Offen für Arbeit"
     }
@@ -75,7 +75,7 @@
     "TOGETHER": "Lass uns zusammenarbeiten",
     "PROBLEM": "Hast du ein Problem zu lösen?",
     "INFO": "Ich entwickle Websites und Anwendungen, die funktional, ansprechend und benutzerfreundlich sind. Ich bin offen für Remote-Arbeit und Kooperationen und bringe technisches Fachwissen, Kreativität und Neugier in jedes Projekt ein.",
-    "IN_NEED": "Brauchst du einen Frontend-Entwickler?",
+    "IN_NEED": "Brauchst du einen Full-Stack-Entwickler?",
     "TALK": "Lass uns reden;",
     "VALUE": "Ich würde gerne echten Mehrwert für dein Team oder deine Idee schaffen!",
     "YOUR_NAME": "Wie heißt du?",
@@ -138,7 +138,7 @@
     "DISCLAIMER": "<span class='highlight'>Portfolio</span> wird 'wie besehen' bereitgestellt, ohne jegliche ausdrückliche oder stillschweigende Garantie, einschließlich, aber nicht beschränkt auf die stillschweigenden Garantien der Marktgängigkeit, Eignung für einen bestimmten Zweck und Nichtverletzung. Weder Ich noch die Developer Akademie haften für direkte, indirekte, zufällige, spezielle, Folgeschäden oder beispielhafte Schäden, einschließlich, aber nicht beschränkt auf, Schäden durch entgangene Gewinne, Goodwill, Nutzung, Daten oder andere immaterielle Verluste, selbst wenn wir auf die Möglichkeit solcher Schäden hingewiesen wurden, die aus der Nutzung oder Leistung von <span class='highlight'>Portfolio</span> entstehen.",
     "H3_INDEMNITY": "Entschädigung",
     "INDEMNITY": "Sie erklären sich damit einverstanden, Mir, die Developer Akademie und unsere Partner, Mitarbeiter, Direktoren, Vertreter und Angestellten von allen Ansprüchen, Verlusten, Schäden, Kosten oder Haftungen (einschließlich angemessener Anwaltskosten) freizustellen, zu verteidigen und schadlos zu halten, die aus Ihrer Nutzung von <span class='highlight'>Portfolio</span> und/oder Ihrem Verstoß gegen dieses Impressum entstehen.",
-    "CONTACT": "Für Fragen oder Mitteilungen kontaktieren Sie uns bitte unter <a href='mailto:webmaster@daniel-tran.com'>webmaster@daniel-tran.com</a>.",
+    "CONTACT": "Für Fragen oder Mitteilungen kontaktieren Sie mich bitte unter <a href='mailto:webmaster@daniel-tran.com'>webmaster@daniel-tran.com</a>.",
     "DATE": "Datum: 26. Juli 2025"
   },
 

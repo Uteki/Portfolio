@@ -7,12 +7,12 @@
   },
 
   "ABOVE": {
-    "DEVELOPER": "Frontend Developer",
+    "DEVELOPER": "Full-Stack Developer",
     "CHECK": "Check my work",
     "CONTACT": "Contact me",
     "MARQUEE": {
       "AVAILABLE_REMOTE": "Available for remote work",
-      "FRONTEND_DEV": "Frontend Developer",
+      "FRONTEND_DEV": "Full-Stack Developer",
       "BASED_IN": "Based in Munich",
       "OPEN_TO_WORK": "Open to work"
     }
@@ -75,7 +75,7 @@
     "TOGETHER": "Let's work together",
     "PROBLEM": "Got a problem to solve?",
     "INFO": "I build websites and applications that are functional, engaging, and user-friendly. I’m open to remote work and collaborations, bringing technical expertise, creativity, and curiosity to every project.",
-    "IN_NEED": "Need a frontend developer?",
+    "IN_NEED": "Looking for a Full-Stack Developer?",
     "TALK": "Let’s talk;",
     "VALUE": "I’d love to add real value to your team or idea!",
     "YOUR_NAME": "What's your name?",
@@ -138,7 +138,7 @@
     "DISCLAIMER": "<span class='highlight'>Portfolio</span> is provided 'as is' without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event will I or the Developer Akademie, be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data, or other intangible losses, even if we have been advised of the possibility of such damages, arising out of or in connection with the use or performance of <span class='highlight'>Portfolio</span>.",
     "H3_INDEMNITY": "Indemnity",
     "INDEMNITY": "You agree to indemnify, defend and hold harmless us, Me and the Developer Akademie, and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of <span class='highlight'>Portfolio</span> and/or your breach of this Legal Notice.",
-    "CONTACT": "For any questions or notices, please contact us at <a href='mailto:webmaster@daniel-tran.com'>webmaster@daniel-tran.com</a>.",
+    "CONTACT": "For any questions or notices, please contact me at <a href='mailto:webmaster@daniel-tran.com'>webmaster@daniel-tran.com</a>.",
     "DATE": "Date: July 26, 2025"
   },
 
