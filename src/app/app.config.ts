@@ -1,4 +1,4 @@
-import { ApplicationConfig, inject, PLATFORM_ID } from '@angular/core';
+import { ApplicationConfig, inject, PLATFORM_ID, APP_INITIALIZER } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -57,7 +57,7 @@ export const appConfig: ApplicationConfig = {
      * Loads available languages and applies saved language from localStorage.
      */
     {
-      provide: 'APP_INITIALIZER',
+      provide: APP_INITIALIZER,
       useFactory: initializeTranslations,
       multi: true,
     },
@@ -82,18 +82,17 @@ export function HttpLoaderFactory(): TranslateLoader {
  *
  * @returns An async function executed during Angular's APP_INITIALIZER phase
  */
-export function initializeTranslations(): () => Promise<void> {
+export function initializeTranslations() {
+  const translate: TranslateService = inject(TranslateService);
+  const http: HttpClient = inject(HttpClient);
+  const platformId: Object = inject(PLATFORM_ID);
+
   return async (): Promise<void> => {
-    const translate: TranslateService = inject(TranslateService);
-    const http: HttpClient = inject(HttpClient);
-    const platformId: Object = inject(PLATFORM_ID);
-
+    await preloadLanguages(translate, http);
+    let lang = 'en';
     if (isPlatformBrowser(platformId)) {
-      await preloadLanguages(translate, http);
-
-      const savedLang: string = localStorage.getItem('lang') || 'en';
-      await firstValueFrom(translate.use(savedLang));
-    }
+      lang = localStorage.getItem('lang') || 'en';
+    } await firstValueFrom(translate.use(lang));
   };
 }
 
